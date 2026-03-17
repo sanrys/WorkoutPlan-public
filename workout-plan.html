@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Workout Plan</title>
+<style>
+  :root {
+    --bg: #121212;
+    --card: #1e1e1e;
+    --card-active: #252525;
+    --accent: #4fc3f7;
+    --accent2: #ff7043;
+    --green: #66bb6a;
+    --text: #e0e0e0;
+    --text-dim: #888;
+    --border: #333;
+    --meal-bg: #1a2a1a;
+    --hiit-bg: #2a1a1a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 12px;
+    padding-bottom: 80px;
+    -webkit-tap-highlight-color: transparent;
+  }
+  h1 {
+    font-size: 1.4rem;
+    text-align: center;
+    padding: 16px 0 4px;
+    color: var(--accent);
+  }
+  .subtitle {
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    margin-bottom: 16px;
+  }
+  .day-card {
+    background: var(--card);
+    border-radius: 12px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: border-color 0.2s;
+  }
+  .day-card.today { border-color: var(--accent); }
+  .day-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .day-header:active { background: var(--card-active); }
+  .day-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+  .day-tag {
+    font-size: 0.75rem;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-weight: 600;
+  }
+  .tag-push { background: #1a3a5c; color: #64b5f6; }
+  .tag-pull { background: #3a1a4c; color: #ce93d8; }
+  .tag-rest { background: #2a2a1a; color: #ffd54f; }
+  .today-badge {
+    font-size: 0.7rem;
+    background: var(--accent);
+    color: #000;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 700;
+    margin-left: 8px;
+  }
+  .day-body {
+    display: none;
+    padding: 0 16px 16px;
+  }
+  .day-card.open .day-body { display: block; }
+  .chevron {
+    font-size: 1.2rem;
+    color: var(--text-dim);
+    transition: transform 0.2s;
+  }
+  .day-card.open .chevron { transform: rotate(180deg); }
+  .section-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 14px 0 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .section-label.lift { color: var(--accent); }
+  .section-label.meal { color: var(--green); }
+  .section-label.hiit { color: var(--accent2); }
+  .exercise-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  .exercise-table th {
+    text-align: left;
+    color: var(--text-dim);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    padding: 4px 6px;
+    border-bottom: 1px solid var(--border);
+  }
+  .exercise-table td {
+    padding: 8px 6px;
+    border-bottom: 1px solid #222;
+    vertical-align: top;
+  }
+  .exercise-table tr:last-child td { border-bottom: none; }
+  .exercise-name { font-weight: 600; }
+  .sets-reps { color: var(--accent); font-weight: 600; white-space: nowrap; }
+  .weight-col { color: #ffd54f; font-weight: 600; font-size: 0.82rem; white-space: nowrap; }
+  .rest-col { color: var(--text-dim); font-size: 0.8rem; white-space: nowrap; }
+  .meal-box {
+    background: var(--meal-bg);
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 6px;
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+  .meal-box strong { color: var(--green); }
+  .meal-macros {
+    color: var(--text-dim);
+    font-size: 0.75rem;
+    margin-top: 4px;
+  }
+  .hiit-box {
+    background: var(--hiit-bg);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+  .hiit-box strong { color: var(--accent2); }
+  .note {
+    color: var(--text-dim);
+    font-size: 0.78rem;
+    font-style: italic;
+    margin-top: 8px;
+    line-height: 1.4;
+  }
+  .rest-content {
+    padding: 10px 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .rest-content li {
+    list-style: none;
+    padding: 4px 0;
+  }
+  .rest-content li::before {
+    content: "- ";
+    color: var(--text-dim);
+  }
+  .overload-section {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 16px;
+    margin-top: 16px;
+    border: 1px solid var(--border);
+  }
+  .overload-section h2 {
+    font-size: 1rem;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .overload-section table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+  }
+  .overload-section th {
+    text-align: left;
+    color: var(--text-dim);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    padding: 4px 6px;
+    border-bottom: 1px solid var(--border);
+  }
+  .overload-section td {
+    padding: 6px;
+    border-bottom: 1px solid #222;
+  }
+</style>
+</head>
+<body>
+
+<h1>6-Day Push/Pull Plan</h1>
+<p class="subtitle">Equinox | Strength + Hypertrophy + Power<br>Morning Lift / Evening HIIT (Mon-Fri)</p>
+
+<div id="days"></div>
+
+<div class="overload-section">
+  <h2>Progressive Overload</h2>
+  <table>
+    <tr><th>Day Type</th><th>Reps</th><th>Progression</th></tr>
+    <tr><td>A (Strength)</td><td>4-6</td><td>+2.5-5 lbs when all reps clean</td></tr>
+    <tr><td>B (Hypertrophy)</td><td>8-12</td><td>+weight at top rep on all sets</td></tr>
+    <tr><td>C (Power)</td><td>4-6</td><td>Focus bar speed; +weight every 2-3 wks</td></tr>
+  </table>
+  <p class="note">Deload every 4-6 weeks: reduce volume 40%, keep intensity. If performance drops 2+ sessions, deload early.</p>
+</div>
+
+<script>
+const days = [
+  {
+    name: "Sunday",
+    dow: 0,
+    tag: "Push A",
+    tagClass: "tag-push",
+    focus: "Strength",
+    exercises: [
+      ["Barbell Back Squat", "4 x 5", "3 min", "135 lbs"],
+      ["Flat Barbell Bench Press", "4 x 5", "3 min", "115 lbs"],
+      ["Overhead Press (barbell)", "3 x 6", "2.5 min", "75 lbs"],
+      ["Leg Press", "3 x 10", "90 sec", "180 lbs"],
+      ["Lateral Raises (cable)", "3 x 12", "60 sec", "15 lbs"]
+    ],
+    preMeal: {
+      text: "Complex carbs + protein, low fat",
+      example: "Oatmeal or rice + chicken breast or eggs",
+      macros: "~45g carbs, 30g protein"
+    },
+    postMeal: {
+      text: "Fast carbs + protein for recovery",
+      example: "White rice + chicken or whey shake + banana",
+      macros: "~55g carbs, 40g protein"
+    },
+    hiit: null,
+    note: "Lifting only. No evening session - recover for the week ahead."
+  },
+  {
+    name: "Monday",
+    dow: 1,
+    tag: "Pull A",
+    tagClass: "tag-pull",
+    focus: "Strength",
+    exercises: [
+      ["Conventional Deadlift", "4 x 5", "3 min", "155 lbs"],
+      ["Weighted Pull-Ups", "4 x 6", "2.5 min", "BW"],
+      ["Barbell Row (Pendlay)", "4 x 6", "2.5 min", "115 lbs"],
+      ["Seated Cable Row", "3 x 8", "90 sec", "120 lbs"],
+      ["Lying Leg Curl", "3 x 10", "90 sec", "45 lbs"],
+      ["Barbell Curl", "3 x 8", "60 sec", "60 lbs"],
+      ["Face Pulls", "3 x 15", "60 sec", "30 lbs"]
+    ],
+    preMeal: {
+      text: "5:30 AM — Quick fuel (wake up + eat immediately)",
+      example: "Banana + tablespoon of honey, or banana + rice cake",
+      macros: "~30g fast carbs | Water"
+    },
+    postMeal: {
+      text: "~7:15 AM — Big breakfast (this is your real meal)",
+      example: "Eggs + oatmeal + toast, or cottage cheese pancakes + egg whites + fruit",
+      macros: "~50g carbs, 40-50g protein"
+    },
+    hiit: "Equinox evening class (optional). Pre-HIIT snack 60-90 min before: banana + rice cake or toast with honey (~30g carbs). Post-HIIT: casein shake or cottage cheese before bed.",
+    note: "6 AM lift. Light quick carbs before, big breakfast after."
+  },
+  {
+    name: "Tuesday",
+    dow: 2,
+    tag: "Push B",
+    tagClass: "tag-push",
+    focus: "Hypertrophy",
+    exercises: [
+      ["Front Squat", "3 x 8", "2.5 min", "95 lbs"],
+      ["Dumbbell Bench Press", "4 x 10", "90 sec", "40 lbs ea"],
+      ["Seated Dumbbell OHP", "3 x 10", "90 sec", "30 lbs ea"],
+      ["Bulgarian Split Squat", "3 x 10/leg", "90 sec", "25 lbs ea"],
+      ["Lateral Raises (dumbbell)", "3 x 12", "60 sec", "15 lbs ea"],
+      ["Overhead Tricep Extension (cable)", "3 x 12", "60 sec", "40 lbs"]
+    ],
+    preMeal: {
+      text: "5:30 AM — Quick fuel (wake up + eat immediately)",
+      example: "Banana + honey, or a few dates + rice cake",
+      macros: "~30g fast carbs | Water"
+    },
+    postMeal: {
+      text: "~7:15 AM — Big breakfast",
+      example: "Cottage cheese pancakes + egg whites, or oats + eggs + fruit",
+      macros: "~50g carbs, 40g protein"
+    },
+    hiit: "Equinox evening class (optional). Pre-HIIT snack 60-90 min before: banana + rice cake (~30g carbs). Post-HIIT: casein shake or cottage cheese before bed.",
+    note: "6 AM lift. Light quick carbs before, big breakfast after."
+  },
+  {
+    name: "Wednesday",
+    dow: 3,
+    tag: "Pull B",
+    tagClass: "tag-pull",
+    focus: "Hypertrophy",
+    exercises: [
+      ["Romanian Deadlift", "4 x 8", "2.5 min", "115 lbs"],
+      ["Lat Pulldown (wide grip)", "4 x 10", "90 sec", "100 lbs"],
+      ["Chest-Supported Row (dumbbell)", "4 x 10", "90 sec", "35 lbs ea"],
+      ["Single-Arm Cable Row", "3 x 12", "60 sec", "40 lbs"],
+      ["Seated Leg Curl", "3 x 12", "60 sec", "45 lbs"],
+      ["Incline Dumbbell Curl", "3 x 10", "60 sec", "20 lbs ea"],
+      ["Reverse Flyes (cable)", "3 x 15", "60 sec", "15 lbs ea"],
+      ["Hip Thrust (barbell)", "3 x 10", "90 sec", "135 lbs"]
+    ],
+    preMeal: {
+      text: "5:30 AM — Quick fuel (wake up + eat immediately)",
+      example: "Banana + honey, or toast with honey",
+      macros: "~30g fast carbs | Water"
+    },
+    postMeal: {
+      text: "~7:15 AM — Big breakfast",
+      example: "Eggs + rice or oatmeal + protein shake + fruit",
+      macros: "~50g carbs, 40g protein"
+    },
+    hiit: "Equinox evening class (optional). Pre-HIIT snack 60-90 min before: banana + rice cake (~30g carbs). Post-HIIT: casein shake or cottage cheese before bed.",
+    note: "6 AM lift. Light quick carbs before, big breakfast after."
+  },
+  {
+    name: "Thursday",
+    dow: 4,
+    tag: "Push C",
+    tagClass: "tag-push",
+    focus: "Power",
+    exercises: [
+      ["Barbell Back Squat (paused)", "4 x 4", "3 min", "115 lbs"],
+      ["Close-Grip Bench Press", "4 x 6", "2.5 min", "95 lbs"],
+      ["Arnold Press", "3 x 10", "90 sec", "25 lbs ea"],
+      ["Walking Lunges (dumbbell)", "3 x 12/leg", "90 sec", "25 lbs ea"],
+      ["Skull Crushers", "3 x 10", "60 sec", "40 lbs"]
+    ],
+    preMeal: {
+      text: "5:30 AM — Quick fuel (wake up + eat immediately)",
+      example: "Banana + rice cake, or dates + honey",
+      macros: "~30g fast carbs | Water"
+    },
+    postMeal: {
+      text: "~7:15 AM — Big breakfast",
+      example: "Cottage cheese pancakes + eggs, or oats + whey shake + banana",
+      macros: "~50g carbs, 40g protein"
+    },
+    hiit: "Equinox evening class (optional). Pre-HIIT snack 60-90 min before: banana + rice cake (~30g carbs). Post-HIIT: casein shake or cottage cheese before bed.",
+    note: "6 AM lift. Light quick carbs before, big breakfast after."
+  },
+  {
+    name: "Friday",
+    dow: 5,
+    tag: "Pull C",
+    tagClass: "tag-pull",
+    focus: "Power + Metabolic",
+    exercises: [
+      ["Rack Pull / Block Deadlift", "4 x 4", "3 min", "175 lbs"],
+      ["Chin-Ups (weighted)", "4 x 6", "2.5 min", "BW"],
+      ["Meadows Row", "3 x 8", "90 sec", "35 lbs"],
+      ["Straight-Arm Pulldown", "3 x 12", "60 sec", "40 lbs"],
+      ["Nordic Hamstring Curl or GHR", "3 x 8", "90 sec", "BW"],
+      ["Hammer Curl", "3 x 10", "60 sec", "25 lbs ea"],
+      ["Band Pull-Aparts", "3 x 20", "45 sec", "Light band"],
+      ["Calf Raises (standing)", "4 x 12", "60 sec", "135 lbs"]
+    ],
+    preMeal: {
+      text: "5:30 AM — Quick fuel (wake up + eat immediately)",
+      example: "Banana + honey, or rice cake + juice",
+      macros: "~30g fast carbs | Water"
+    },
+    postMeal: {
+      text: "~7:15 AM — Big breakfast (end-of-week refuel)",
+      example: "Eggs + toast + fruit, or oats + protein shake + banana",
+      macros: "~60g carbs, 40g protein"
+    },
+    hiit: "Equinox evening class (optional). Pre-HIIT snack 60-90 min before: banana + rice cake (~30g carbs). Post-HIIT: casein shake or cottage cheese before bed.",
+    note: "6 AM lift. Light quick carbs before, big breakfast after."
+  },
+  {
+    name: "Saturday",
+    dow: 6,
+    tag: "REST",
+    tagClass: "tag-rest",
+    focus: "Recovery",
+    exercises: [],
+    preMeal: null,
+    postMeal: null,
+    hiit: null,
+    note: null,
+    rest: true
+  }
+];
+
+function getToday() {
+  return new Date().getDay();
+}
+
+function renderDays() {
+  const container = document.getElementById("days");
+  const today = getToday();
+
+  days.forEach(day => {
+    const isToday = day.dow === today;
+    const card = document.createElement("div");
+    card.className = "day-card" + (isToday ? " today open" : "");
+
+    let bodyHTML = "";
+
+    if (day.rest) {
+      bodyHTML = `
+        <div class="rest-content">
+          <ul>
+            <li>Foam rolling / mobility work (15-20 min)</li>
+            <li>Light stretching or yoga</li>
+            <li>Walk for active recovery</li>
+            <li>Prioritize sleep (7-9 hours)</li>
+          </ul>
+        </div>
+        <div class="section-label meal">Nutrition</div>
+        <div class="meal-box">
+          <strong>Lower carb day.</strong> Reduce carbs ~20-30% from training days. Keep protein high (1g/lb). Include carbs at dinner for sleep quality. Casein or cottage cheese before bed to recover for Sunday.
+          <div class="meal-macros">~Protein 1g/lb | Carbs reduced | Fats slightly higher OK</div>
+        </div>
+      `;
+    } else {
+      // Pre-workout meal
+      let mealHTML = "";
+      if (day.preMeal) {
+        mealHTML += `
+          <div class="section-label meal">Pre-Workout Meal (60-90 min before)</div>
+          <div class="meal-box">
+            <strong>${day.preMeal.text}</strong><br>
+            ${day.preMeal.example}
+            <div class="meal-macros">${day.preMeal.macros}</div>
+          </div>
+        `;
+      }
+
+      // Exercise table
+      let tableHTML = `
+        <div class="section-label lift">Morning Lift - ${day.focus}</div>
+        <table class="exercise-table">
+          <tr><th>Exercise</th><th>Sets x Reps</th><th>Weight</th><th>Rest</th></tr>
+      `;
+      day.exercises.forEach(ex => {
+        tableHTML += `<tr>
+          <td class="exercise-name">${ex[0]}</td>
+          <td class="sets-reps">${ex[1]}</td>
+          <td class="weight-col">${ex[3] || '--'}</td>
+          <td class="rest-col">${ex[2]}</td>
+        </tr>`;
+      });
+      tableHTML += "</table>";
+
+      // Post-workout meal
+      let postHTML = "";
+      if (day.postMeal) {
+        postHTML = `
+          <div class="section-label meal">Post-Workout Meal (within 60 min)</div>
+          <div class="meal-box">
+            <strong>${day.postMeal.text}</strong><br>
+            ${day.postMeal.example}
+            <div class="meal-macros">${day.postMeal.macros}</div>
+          </div>
+        `;
+      }
+
+      // HIIT
+      let hiitHTML = "";
+      if (day.hiit) {
+        hiitHTML = `
+          <div class="section-label hiit">Evening HIIT (Optional)</div>
+          <div class="hiit-box">${day.hiit}</div>
+        `;
+      }
+
+      // Note
+      let noteHTML = "";
+      if (day.note) {
+        noteHTML = `<p class="note">${day.note}</p>`;
+      }
+
+      bodyHTML = mealHTML + tableHTML + postHTML + hiitHTML + noteHTML;
+    }
+
+    card.innerHTML = `
+      <div class="day-header" onclick="toggleDay(this)">
+        <div>
+          <span class="day-name">${day.name}</span>
+          ${isToday ? '<span class="today-badge">TODAY</span>' : ''}
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="day-tag ${day.tagClass}">${day.tag} ${!day.rest ? '- ' + day.focus : ''}</span>
+          <span class="chevron">&#9660;</span>
+        </div>
+      </div>
+      <div class="day-body">${bodyHTML}</div>
+    `;
+
+    container.appendChild(card);
+  });
+}
+
+function toggleDay(header) {
+  header.parentElement.classList.toggle("open");
+}
+
+renderDays();
+</script>
+</body>
+</html>
