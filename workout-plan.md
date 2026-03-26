@@ -33,6 +33,7 @@
 | 3 | Overhead Press (barbell) | 3 x 6 | 2.5 min | 75 lbs (bar + 30) |
 | 4 | Leg Press | 3 x 10 | 90 sec | 180 lbs |
 | 5 | Lateral Raises (cable) | 3 x 12 | 60 sec | 15 lbs |
+| 6 | Tricep Rope Pushdown | 3 x 12 | 60 sec | 40 lbs |
 
 **Then: 45-min Equinox HIIT class (post-weights)**
 
