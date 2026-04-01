@@ -16,7 +16,6 @@
     --text-dim: #888;
     --border: #333;
     --meal-bg: #1a2a1a;
-    --hiit-bg: #2a1a1a;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -101,8 +100,6 @@
     gap: 6px;
   }
   .section-label.lift { color: var(--accent); }
-  .section-label.meal { color: var(--green); }
-  .section-label.hiit { color: var(--accent2); }
   .exercise-table {
     width: 100%;
     border-collapse: collapse;
@@ -126,28 +123,6 @@
   .sets-reps { color: var(--accent); font-weight: 600; white-space: nowrap; }
   .weight-col { color: #ffd54f; font-weight: 600; font-size: 0.82rem; white-space: nowrap; }
   .rest-col { color: var(--text-dim); font-size: 0.8rem; white-space: nowrap; }
-  .meal-box {
-    background: var(--meal-bg);
-    border-radius: 8px;
-    padding: 10px 12px;
-    margin-bottom: 6px;
-    font-size: 0.85rem;
-    line-height: 1.5;
-  }
-  .meal-box strong { color: var(--green); }
-  .meal-macros {
-    color: var(--text-dim);
-    font-size: 0.75rem;
-    margin-top: 4px;
-  }
-  .hiit-box {
-    background: var(--hiit-bg);
-    border-radius: 8px;
-    padding: 10px 12px;
-    font-size: 0.85rem;
-    line-height: 1.5;
-  }
-  .hiit-box strong { color: var(--accent2); }
   .note {
     color: var(--text-dim);
     font-size: 0.78rem;
@@ -202,7 +177,7 @@
 <body>
 
 <h1>6-Day Push/Pull Plan</h1>
-<p class="subtitle">Equinox | Strength + Hypertrophy + Power<br>Morning Lift / Evening HIIT (Mon-Fri)</p>
+<p class="subtitle">Equinox | Strength + Hypertrophy + Power</p>
 
 <div id="days"></div>
 
@@ -232,19 +207,7 @@ const days = [
       ["Leg Press", "3 x 10", "90 sec", "180 lbs"],
       ["Lateral Raises (cable)", "3 x 12", "60 sec", "15 lbs"],
       ["Tricep Rope Pushdown", "3 x 12", "60 sec", "40 lbs"]
-    ],
-    preMeal: {
-      text: "Complex carbs + protein, low fat",
-      example: "Oatmeal or rice + chicken breast or eggs",
-      macros: "~45g carbs, 30g protein"
-    },
-    postMeal: {
-      text: "Fast carbs + protein for recovery",
-      example: "White rice + chicken or whey shake + banana",
-      macros: "~55g carbs, 40g protein"
-    },
-    hiit: null,
-    note: "Lifting only. No evening session - recover for the week ahead."
+    ]
   },
   {
     name: "Monday",
@@ -260,19 +223,7 @@ const days = [
       ["Lying Leg Curl", "3 x 10", "90 sec", "45 lbs"],
       ["Barbell Curl", "3 x 8", "60 sec", "60 lbs"],
       ["Face Pulls", "3 x 15", "60 sec", "30 lbs"]
-    ],
-    preMeal: {
-      text: "5:30 AM — Quick fuel (wake up + eat immediately)",
-      example: "Banana + tablespoon of honey, or banana + rice cake",
-      macros: "~30g fast carbs | Water"
-    },
-    postMeal: {
-      text: "~7:15 AM — Big breakfast (this is your real meal)",
-      example: "Eggs + oatmeal + toast, or cottage cheese pancakes + egg whites + fruit",
-      macros: "~50g carbs, 40-50g protein"
-    },
-    hiit: "Equinox evening class (optional). Pre-HIIT snack 60-90 min before: banana + rice cake or toast with honey (~30g carbs). Post-HIIT: casein shake or cottage cheese before bed.",
-    note: "6 AM lift. Light quick carbs before, big breakfast after."
+    ]
   },
   {
     name: "Tuesday",
@@ -287,19 +238,7 @@ const days = [
       ["Bulgarian Split Squat", "3 x 10/leg", "90 sec", "25 lbs ea"],
       ["Lateral Raises (dumbbell)", "3 x 12", "60 sec", "15 lbs ea"],
       ["Overhead Tricep Extension (cable)", "3 x 12", "60 sec", "40 lbs"]
-    ],
-    preMeal: {
-      text: "5:30 AM — Quick fuel (wake up + eat immediately)",
-      example: "Banana + honey, or a few dates + rice cake",
-      macros: "~30g fast carbs | Water"
-    },
-    postMeal: {
-      text: "~7:15 AM — Big breakfast",
-      example: "Cottage cheese pancakes + egg whites, or oats + eggs + fruit",
-      macros: "~50g carbs, 40g protein"
-    },
-    hiit: "Equinox evening class (optional). Pre-HIIT snack 60-90 min before: banana + rice cake (~30g carbs). Post-HIIT: casein shake or cottage cheese before bed.",
-    note: "6 AM lift. Light quick carbs before, big breakfast after."
+    ]
   },
   {
     name: "Wednesday",
@@ -316,19 +255,7 @@ const days = [
       ["Incline Dumbbell Curl", "3 x 10", "60 sec", "20 lbs ea"],
       ["Reverse Flyes (cable)", "3 x 15", "60 sec", "15 lbs ea"],
       ["Hip Thrust (barbell)", "3 x 10", "90 sec", "135 lbs"]
-    ],
-    preMeal: {
-      text: "5:30 AM — Quick fuel (wake up + eat immediately)",
-      example: "Banana + honey, or toast with honey",
-      macros: "~30g fast carbs | Water"
-    },
-    postMeal: {
-      text: "~7:15 AM — Big breakfast",
-      example: "Eggs + rice or oatmeal + protein shake + fruit",
-      macros: "~50g carbs, 40g protein"
-    },
-    hiit: "Equinox evening class (optional). Pre-HIIT snack 60-90 min before: banana + rice cake (~30g carbs). Post-HIIT: casein shake or cottage cheese before bed.",
-    note: "6 AM lift. Light quick carbs before, big breakfast after."
+    ]
   },
   {
     name: "Thursday",
@@ -342,19 +269,7 @@ const days = [
       ["Arnold Press", "3 x 10", "90 sec", "25 lbs ea"],
       ["Walking Lunges (dumbbell)", "3 x 12/leg", "90 sec", "25 lbs ea"],
       ["Skull Crushers", "3 x 10", "60 sec", "40 lbs"]
-    ],
-    preMeal: {
-      text: "5:30 AM — Quick fuel (wake up + eat immediately)",
-      example: "Banana + rice cake, or dates + honey",
-      macros: "~30g fast carbs | Water"
-    },
-    postMeal: {
-      text: "~7:15 AM — Big breakfast",
-      example: "Cottage cheese pancakes + eggs, or oats + whey shake + banana",
-      macros: "~50g carbs, 40g protein"
-    },
-    hiit: "Equinox evening class (optional). Pre-HIIT snack 60-90 min before: banana + rice cake (~30g carbs). Post-HIIT: casein shake or cottage cheese before bed.",
-    note: "6 AM lift. Light quick carbs before, big breakfast after."
+    ]
   },
   {
     name: "Friday",
@@ -371,19 +286,7 @@ const days = [
       ["Hammer Curl", "3 x 10", "60 sec", "25 lbs ea"],
       ["Band Pull-Aparts", "3 x 20", "45 sec", "Light band"],
       ["Calf Raises (standing)", "4 x 12", "60 sec", "135 lbs"]
-    ],
-    preMeal: {
-      text: "5:30 AM — Quick fuel (wake up + eat immediately)",
-      example: "Banana + honey, or rice cake + juice",
-      macros: "~30g fast carbs | Water"
-    },
-    postMeal: {
-      text: "~7:15 AM — Big breakfast (end-of-week refuel)",
-      example: "Eggs + toast + fruit, or oats + protein shake + banana",
-      macros: "~60g carbs, 40g protein"
-    },
-    hiit: "Equinox evening class (optional). Pre-HIIT snack 60-90 min before: banana + rice cake (~30g carbs). Post-HIIT: casein shake or cottage cheese before bed.",
-    note: "6 AM lift. Light quick carbs before, big breakfast after."
+    ]
   },
   {
     name: "Saturday",
@@ -392,10 +295,6 @@ const days = [
     tagClass: "tag-rest",
     focus: "Recovery",
     exercises: [],
-    preMeal: null,
-    postMeal: null,
-    hiit: null,
-    note: null,
     rest: true
   }
 ];
@@ -425,29 +324,10 @@ function renderDays() {
             <li>Prioritize sleep (7-9 hours)</li>
           </ul>
         </div>
-        <div class="section-label meal">Nutrition</div>
-        <div class="meal-box">
-          <strong>Lower carb day.</strong> Reduce carbs ~20-30% from training days. Keep protein high (1g/lb). Include carbs at dinner for sleep quality. Casein or cottage cheese before bed to recover for Sunday.
-          <div class="meal-macros">~Protein 1g/lb | Carbs reduced | Fats slightly higher OK</div>
-        </div>
       `;
     } else {
-      // Pre-workout meal
-      let mealHTML = "";
-      if (day.preMeal) {
-        mealHTML += `
-          <div class="section-label meal">Pre-Workout Meal (60-90 min before)</div>
-          <div class="meal-box">
-            <strong>${day.preMeal.text}</strong><br>
-            ${day.preMeal.example}
-            <div class="meal-macros">${day.preMeal.macros}</div>
-          </div>
-        `;
-      }
-
-      // Exercise table
       let tableHTML = `
-        <div class="section-label lift">Morning Lift - ${day.focus}</div>
+        <div class="section-label lift">${day.focus}</div>
         <table class="exercise-table">
           <tr><th>Exercise</th><th>Sets x Reps</th><th>Weight</th><th>Rest</th></tr>
       `;
@@ -461,35 +341,7 @@ function renderDays() {
       });
       tableHTML += "</table>";
 
-      // Post-workout meal
-      let postHTML = "";
-      if (day.postMeal) {
-        postHTML = `
-          <div class="section-label meal">Post-Workout Meal (within 60 min)</div>
-          <div class="meal-box">
-            <strong>${day.postMeal.text}</strong><br>
-            ${day.postMeal.example}
-            <div class="meal-macros">${day.postMeal.macros}</div>
-          </div>
-        `;
-      }
-
-      // HIIT
-      let hiitHTML = "";
-      if (day.hiit) {
-        hiitHTML = `
-          <div class="section-label hiit">Evening HIIT (Optional)</div>
-          <div class="hiit-box">${day.hiit}</div>
-        `;
-      }
-
-      // Note
-      let noteHTML = "";
-      if (day.note) {
-        noteHTML = `<p class="note">${day.note}</p>`;
-      }
-
-      bodyHTML = mealHTML + tableHTML + postHTML + hiitHTML + noteHTML;
+      bodyHTML = tableHTML;
     }
 
     card.innerHTML = `
