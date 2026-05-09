@@ -124,14 +124,14 @@
 | 2 | Chin-Ups (weighted) | 4 x 6 | 2.5 min | Bodyweight (add weight when hitting 6 reps) |
 | 3 | Meadows Row | 3 x 8 | 90 sec | 35 lbs |
 | 4 | Straight-Arm Pulldown | 3 x 12 | 60 sec | 40 lbs |
-| 5 | Nordic Hamstring Curl or GHR | 3 x 8 | 90 sec | Bodyweight |
+| 5 | Single-Leg RDL (dumbbell) | 3 x 8/leg | 90 sec | 25-30 lbs each hand |
 | 6 | Hammer Curl | 3 x 10 | 60 sec | 25 lbs each |
 | 7 | Band Pull-Aparts | 3 x 20 | 45 sec | Light band |
 | 8 | Calf Raises (standing) | 4 x 12 | 60 sec | 135 lbs |
 
 **Form references:**
 - Meadows Row: [John Meadows (Mountain Dog)](https://www.youtube.com/watch?v=VrPMWjIwsGE)
-- Nordic Curl: [Knees Over Toes Guy](https://www.youtube.com/watch?v=WbIGaVGOHdQ)
+- Single-Leg RDL: [Jeff Nippard](https://www.youtube.com/watch?v=hHp-46NBFEo)
 - Chin-Ups: [Jeff Nippard](https://www.youtube.com/watch?v=brhRXlOhWAM)
 
 ---
