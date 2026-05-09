@@ -17,7 +17,9 @@
 | **Friday** | Pull C | Power + Metabolic |
 | **Saturday** | **REST** | Recovery, stretching, mobility |
 
-> **Leg integration:** Quads on Push days (squats, leg press, lunges). Hamstrings/glutes on Pull days (deadlifts, RDLs, leg curls). Legs hit **3x/week**.
+> **Leg integration:** Quads on Push days (squats, leg press, step-ups). Hamstrings/glutes on Pull days (deadlifts, RDLs, leg curls). Legs hit **3x/week**.
+
+> **Knee considerations (right knee, lateral):** Stop back squat at parallel (90°) — no deeper. Single-leg work replaces Bulgarian split squats / walking lunges to avoid lateral knee stress during deep unilateral knee flexion. If any replacement movement triggers lateral knee pain, shorten ROM or sub leg extension (light, pain-free range).
 
 ---
 
@@ -65,14 +67,14 @@
 | 1 | Front Squat | 3 x 8 | 2.5 min | 95 lbs (bar + 50) |
 | 2 | Dumbbell Bench Press | 4 x 10 | 90 sec | 40 lbs each |
 | 3 | Seated Dumbbell OHP | 3 x 10 | 90 sec | 30 lbs each |
-| 4 | Bulgarian Split Squat | 3 x 10/leg | 90 sec | 25 lbs each |
+| 4 | Single-Leg Leg Press | 3 x 10/leg | 90 sec | 90 lbs |
 | 5 | Lateral Raises (dumbbell) | 3 x 12 | 60 sec | 15 lbs each |
 | 6 | Overhead Tricep Extension (cable) | 3 x 12 | 60 sec | 40 lbs |
 
 **Form references:**
 - Front Squat: [Jeff Nippard - How To Front Squat](https://www.youtube.com/watch?v=wyDbagKwOq0)
 - Cable Flyes: [Jeff Nippard - Best Chest Exercises](https://www.youtube.com/watch?v=jFnMEpfaFac)
-- Bulgarian Split Squat: [Jeff Nippard](https://www.youtube.com/watch?v=2C-uNgKwPLE)
+- Single-Leg Leg Press: [Jeff Nippard](https://www.youtube.com/watch?v=wAE5ZkH8Jr0)
 
 ---
 
@@ -103,13 +105,14 @@
 | 1 | Barbell Back Squat (paused) | 4 x 4 | 3 min | 115 lbs (bar + 70) |
 | 2 | Close-Grip Bench Press | 4 x 6 | 2.5 min | 95 lbs (bar + 50) |
 | 3 | Arnold Press | 3 x 10 | 90 sec | 25 lbs each |
-| 4 | Walking Lunges (dumbbell) | 3 x 12/leg | 90 sec | 25 lbs each |
+| 4 | Box Step-Ups (dumbbell) | 3 x 10/leg | 90 sec | 25 lbs each, 18" box |
 | 5 | Skull Crushers | 3 x 10 | 60 sec | 40 lbs (EZ bar) |
 
 **Form references:**
 - Paused Squat: [Renaissance Periodization](https://www.youtube.com/watch?v=bEv6CCg2BC8)
 - Close-Grip Bench: [Jeff Nippard](https://www.youtube.com/watch?v=nEF0bv2FW94)
 - Arnold Press: [Jeremy Ethier](https://www.youtube.com/watch?v=6Z15_WdXmVw)
+- Box Step-Ups: [Athlean-X](https://www.youtube.com/watch?v=dQqApCGd5Ss)
 
 ---
 
@@ -153,6 +156,23 @@ Use **double progression** -- hit the top of the rep range with good form across
 | **C days (Power)** | 4-6 reps | Focus on bar speed; add weight every 2-3 weeks |
 
 **Deload:** Every 4-6 weeks, reduce volume by 40% while keeping intensity. Listen to your body -- if performance drops for 2+ sessions, deload early.
+
+---
+
+## Exercise Rotation (fresh stimulus every 4-6 weeks)
+
+To prevent staleness and keep progress going, swap **one exercise per day** after each training block. Rotate on these pairs:
+
+| Day | Rotate This | With This |
+|-----|-------------|-----------|
+| Push A | Leg Press | Hack Squat |
+| Pull A | Barbell Row (Pendlay) | T-Bar Row |
+| Push B | Dumbbell Bench Press | Incline DB Press |
+| Pull B | Lat Pulldown (wide) | Neutral-Grip Pulldown |
+| Push C | Arnold Press | Landmine Press |
+| Pull C | Meadows Row | Chest-Supported T-Bar Row |
+
+Keep sets/reps/rest the same. Rotate back after next block.
 
 ---
 
