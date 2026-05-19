@@ -64,7 +64,7 @@
 
 | # | Exercise | Sets x Reps | Rest | Suggested Weight |
 |---|----------|-------------|------|-----------------|
-| 1 | Front Squat | 3 x 8 | 2.5 min | 95 lbs (bar + 50) |
+| 1 | Hack Squat *or* Goblet Squat | 3 x 8 | 2.5 min | Hack: 90-115 lbs / Goblet: 50-70 lb DB |
 | 2 | Dumbbell Bench Press | 4 x 10 | 90 sec | 40 lbs each |
 | 3 | Seated Dumbbell OHP | 3 x 10 | 90 sec | 30 lbs each |
 | 4 | Single-Leg Leg Press | 3 x 10/leg | 90 sec | 90 lbs |
@@ -72,7 +72,8 @@
 | 6 | Overhead Tricep Extension (cable) | 3 x 12 | 60 sec | 40 lbs |
 
 **Form references:**
-- Front Squat: [Jeff Nippard - How To Front Squat](https://www.youtube.com/watch?v=wyDbagKwOq0)
+- Hack Squat: [Jeff Nippard - How To Hack Squat](https://www.youtube.com/watch?v=EaLqbnbiywc)
+- Goblet Squat: [Jeff Nippard - Goblet Squat](https://www.youtube.com/watch?v=MeIiIdhvXT4)
 - Cable Flyes: [Jeff Nippard - Best Chest Exercises](https://www.youtube.com/watch?v=jFnMEpfaFac)
 - Single-Leg Leg Press: [Jeff Nippard](https://www.youtube.com/watch?v=wAE5ZkH8Jr0)
 
