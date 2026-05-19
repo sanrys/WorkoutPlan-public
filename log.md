@@ -218,3 +218,150 @@
 ### Notes
 - Lifting-only day, no HIIT.
 - Day 10 complete.
+
+---
+
+## 2026-05-08 (Friday) - Pull C: Power + Metabolic
+
+### Workout
+- **Morning:** Pull C (completed)
+  - Rack Pull / Block Deadlift: 4 x 4 @ 175 lbs
+  - Chin-Ups (weighted): 4 x 6 @ bodyweight
+  - Meadows Row: 3 x 8 @ 35 lbs
+  - Straight-Arm Pulldown: 3 x 12 @ 40 lbs
+  - Single-Leg RDL (dumbbell): 3 x 8/leg @ 25 lbs each hand
+  - Hammer Curl: 3 x 10 @ 25 lbs each
+  - Band Pull-Aparts: 3 x 20 @ light band
+  - Calf Raises (standing): 4 x 12 @ 135 lbs
+
+### Notes
+- First session with Single-Leg RDL replacing Nordic Curl (knee-safe swap).
+
+---
+
+## 2026-05-09 (Saturday) - REST DAY
+
+### Notes
+- Recovery day. Mobility + stretching.
+
+---
+
+## 2026-05-10 (Sunday) - Push A: Strength
+
+### Workout
+- **Morning:** Push A (completed)
+  - Barbell Back Squat: 4 x 5 @ 135 lbs
+  - Flat Barbell Bench Press: 4 x 5 @ 115 lbs
+  - Overhead Press (barbell): 3 x 6 @ 75 lbs
+  - Leg Press: 3 x 10 @ 180 lbs
+  - Lateral Raises (cable): 3 x 12 @ 15 lbs
+  - Tricep Rope Pushdown: 3 x 12 @ 40 lbs
+
+---
+
+## 2026-05-11 (Monday) - Pull A: Strength
+
+### Workout
+- **Morning:** Pull A (completed)
+  - Conventional Deadlift: 4 x 5 @ 155 lbs
+  - Weighted Pull-Ups: 4 x 6 @ bodyweight
+  - Barbell Row (Pendlay): 4 x 6 @ 115 lbs
+  - Seated Cable Row: 3 x 8 @ 120 lbs
+  - Lying Leg Curl: 3 x 10 @ 45 lbs
+  - Barbell Curl: 3 x 8 @ 60 lbs (EZ bar)
+  - Face Pulls: 3 x 15 @ 30 lbs
+
+---
+
+## 2026-05-12 (Tuesday) - Push B: Hypertrophy
+
+### Workout
+- **Morning:** Push B (completed)
+  - Front Squat: 3 x 8 @ 95 lbs
+  - Dumbbell Bench Press: 4 x 10 @ 40 lbs each
+  - Seated Dumbbell OHP: 3 x 10 @ 30 lbs each
+  - Single-Leg Leg Press: 3 x 10/leg @ 90 lbs
+  - Lateral Raises (dumbbell): 3 x 12 @ 15 lbs each
+  - Overhead Tricep Extension (cable): 3 x 12 @ 40 lbs
+
+### Notes
+- Single-Leg Leg Press replacing Bulgarian Split Squat (knee-safe swap).
+
+---
+
+## 2026-05-13 (Wednesday) - Pull B: Hypertrophy
+
+### Workout
+- **Morning:** Pull B (completed)
+  - Romanian Deadlift: 4 x 8 @ 115 lbs
+  - Lat Pulldown (wide grip): 4 x 10 @ 100 lbs
+  - Chest-Supported Row (dumbbell): 4 x 10 @ 35 lbs each
+  - Single-Arm Cable Row: 3 x 12 @ 40 lbs
+  - Seated Leg Curl: 3 x 12 @ 45 lbs
+  - Incline Dumbbell Curl: 3 x 10 @ 20 lbs each
+  - Reverse Flyes (cable): 3 x 15 @ 15 lbs each
+  - Hip Thrust (barbell): 3 x 10 @ 135 lbs
+
+---
+
+## 2026-05-14 (Thursday) - Push C: Power
+
+### Workout
+- **Morning:** Push C (completed)
+  - Barbell Back Squat (paused): 4 x 4 @ 115 lbs
+  - Close-Grip Bench Press: 4 x 6 @ 95 lbs
+  - Arnold Press: 3 x 10 @ 25 lbs each
+  - Box Step-Ups (dumbbell): 3 x 10/leg @ 25 lbs each, 18" box
+  - Skull Crushers: 3 x 10 @ 40 lbs (EZ bar)
+
+### Notes
+- Box Step-Ups replacing Walking Lunges (knee-safe swap).
+
+---
+
+## 2026-05-15 (Friday) - Pull C: Power + Metabolic
+
+### Workout
+- **Morning:** Pull C (completed)
+  - Rack Pull / Block Deadlift: 4 x 4 @ 175 lbs
+  - Chin-Ups (weighted): 4 x 6 @ bodyweight
+  - Meadows Row: 3 x 8 @ 35 lbs
+  - Straight-Arm Pulldown: 3 x 12 @ 40 lbs
+  - Single-Leg RDL (dumbbell): 3 x 8/leg @ 25 lbs each hand
+  - Hammer Curl: 3 x 10 @ 25 lbs each
+  - Band Pull-Aparts: 3 x 20 @ light band
+  - Calf Raises (standing): 4 x 12 @ 135 lbs
+
+---
+
+## 2026-05-16 (Saturday) - REST DAY
+
+### Notes
+- Recovery day.
+
+---
+
+## 2026-05-17 (Sunday) - Push A: Strength
+
+### Workout
+- **Morning:** Push A (completed)
+  - Barbell Back Squat: 4 x 5 @ 135 lbs
+  - Flat Barbell Bench Press: 4 x 5 @ 115 lbs
+  - Overhead Press (barbell): 3 x 6 @ 75 lbs
+  - Leg Press: 3 x 10 @ 180 lbs
+  - Lateral Raises (cable): 3 x 12 @ 15 lbs
+  - Tricep Rope Pushdown: 3 x 12 @ 40 lbs
+
+---
+
+## 2026-05-18 (Monday) - Pull A: Strength
+
+### Workout
+- **Morning:** Pull A (completed)
+  - Conventional Deadlift: 4 x 5 @ 155 lbs
+  - Weighted Pull-Ups: 4 x 6 @ bodyweight
+  - Barbell Row (Pendlay): 4 x 6 @ 115 lbs
+  - Seated Cable Row: 3 x 8 @ 120 lbs
+  - Lying Leg Curl: 3 x 10 @ 45 lbs
+  - Barbell Curl: 3 x 8 @ 60 lbs (EZ bar)
+  - Face Pulls: 3 x 15 @ 30 lbs
