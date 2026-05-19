@@ -64,7 +64,7 @@
 
 | # | Exercise | Sets x Reps | Rest | Suggested Weight |
 |---|----------|-------------|------|-----------------|
-| 1 | Hack Squat *or* Goblet Squat | 3 x 8 | 2.5 min | Hack: 90-115 lbs / Goblet: 50-70 lb DB |
+| 1 | Hack Squat / Goblet Squat | 3 x 8 | 2.5 min | 90-115 lbs / 50-70 lb DB |
 | 2 | Dumbbell Bench Press | 4 x 10 | 90 sec | 40 lbs each |
 | 3 | Seated Dumbbell OHP | 3 x 10 | 90 sec | 30 lbs each |
 | 4 | Single-Leg Leg Press | 3 x 10/leg | 90 sec | 90 lbs |
