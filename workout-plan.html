@@ -2,298 +2,615 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Workout Plan</title>
 <style>
   :root {
-    --bg: #121212;
-    --card: #1e1e1e;
-    --card-active: #252525;
-    --accent: #4fc3f7;
-    --accent2: #ff7043;
-    --green: #66bb6a;
-    --text: #e0e0e0;
-    --text-dim: #888;
-    --border: #333;
-    --meal-bg: #1a2a1a;
+    --bg: #0f1115;
+    --panel: #171b22;
+    --panel-2: #1d232c;
+    --line: #2a3240;
+    --text: #f2f4f8;
+    --muted: #9aa6b5;
+    --soft: #c8d1dc;
+    --push: #6bd3ff;
+    --pull: #c79bff;
+    --rest: #f1c75b;
+    --power: #ff8a65;
+    --green: #7bd88f;
+    --danger: #ff6b7a;
+    --shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
   }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: var(--bg);
+    margin: 0;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background:
+      radial-gradient(circle at 20% 0%, rgba(107, 211, 255, 0.16), transparent 30rem),
+      linear-gradient(180deg, #111821 0%, var(--bg) 24rem);
     color: var(--text);
-    padding: 12px;
-    padding-bottom: 80px;
+    padding: 14px;
+    padding-bottom: 42px;
+    overflow-x: hidden;
     -webkit-tap-highlight-color: transparent;
   }
+
+  .app {
+    width: min(100%, 780px);
+    margin: 0 auto;
+  }
+
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 2px 14px;
+  }
+
   h1 {
-    font-size: 1.4rem;
-    text-align: center;
-    padding: 16px 0 4px;
-    color: var(--accent);
+    margin: 0;
+    font-size: clamp(1.55rem, 8vw, 2.5rem);
+    line-height: 1;
+    letter-spacing: 0;
   }
+
   .subtitle {
-    text-align: center;
-    color: var(--text-dim);
-    font-size: 0.85rem;
-    margin-bottom: 16px;
+    margin: 7px 0 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.35;
   }
-  .day-card {
-    background: var(--card);
-    border-radius: 12px;
-    margin-bottom: 10px;
-    overflow: hidden;
-    border: 1px solid var(--border);
-    transition: border-color 0.2s;
+
+  .gym-pill {
+    flex: 0 0 auto;
+    border: 1px solid rgba(107, 211, 255, 0.34);
+    color: var(--push);
+    background: rgba(107, 211, 255, 0.08);
+    border-radius: 999px;
+    padding: 7px 10px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
   }
-  .day-card.today { border-color: var(--accent); }
-  .day-header {
+
+  .today-panel {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: linear-gradient(135deg, rgba(29, 35, 44, 0.96), rgba(20, 24, 31, 0.96));
+    border-radius: 8px;
+    padding: 14px;
+    box-shadow: var(--shadow);
+  }
+
+  .today-kicker {
+    color: var(--muted);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .today-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 14px 16px;
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .today-title strong {
+    font-size: 1.25rem;
+    line-height: 1.1;
+  }
+
+  .today-focus {
+    color: var(--soft);
+    font-size: 0.9rem;
+    margin-top: 6px;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin: 12px 0 4px;
+  }
+
+  .stat {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 8px;
+    padding: 10px 8px;
+    min-width: 0;
+  }
+
+  .stat strong {
+    display: block;
+    font-size: 1rem;
+  }
+
+  .stat span {
+    display: block;
+    color: var(--muted);
+    font-size: 0.72rem;
+    margin-top: 2px;
+    line-height: 1.25;
+  }
+
+  .day-rail {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    gap: 7px;
+    overflow-x: auto;
+    margin: 12px -14px 14px;
+    padding: 10px 14px;
+    background: rgba(15, 17, 21, 0.82);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    scrollbar-width: none;
+  }
+
+  .day-rail::-webkit-scrollbar { display: none; }
+
+  .day-link {
+    flex: 0 0 auto;
+    border: 1px solid var(--line);
+    background: var(--panel);
+    color: var(--soft);
+    border-radius: 999px;
+    padding: 8px 11px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  .day-link.today {
+    border-color: var(--push);
+    color: #061018;
+    background: var(--push);
+  }
+
+  .day-card {
+    border: 1px solid var(--line);
+    background: rgba(23, 27, 34, 0.96);
+    border-radius: 8px;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+
+  .day-card.today {
+    border-color: rgba(107, 211, 255, 0.75);
+    box-shadow: 0 0 0 1px rgba(107, 211, 255, 0.14), var(--shadow);
+  }
+
+  .day-header {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    align-items: center;
+    padding: 14px;
+    color: inherit;
+    background: transparent;
+    border: 0;
+    text-align: left;
     cursor: pointer;
-    user-select: none;
+    font: inherit;
   }
-  .day-header:active { background: var(--card-active); }
-  .day-name {
-    font-size: 1.1rem;
-    font-weight: 700;
-  }
-  .day-tag {
-    font-size: 0.75rem;
-    padding: 3px 8px;
-    border-radius: 6px;
-    font-weight: 600;
-  }
-  .tag-push { background: #1a3a5c; color: #64b5f6; }
-  .tag-pull { background: #3a1a4c; color: #ce93d8; }
-  .tag-rest { background: #2a2a1a; color: #ffd54f; }
-  .today-badge {
-    font-size: 0.7rem;
-    background: var(--accent);
-    color: #000;
-    padding: 2px 8px;
-    border-radius: 10px;
-    font-weight: 700;
-    margin-left: 8px;
-  }
-  .day-body {
-    display: none;
-    padding: 0 16px 16px;
-  }
-  .day-card.open .day-body { display: block; }
-  .chevron {
-    font-size: 1.2rem;
-    color: var(--text-dim);
-    transition: transform 0.2s;
-  }
-  .day-card.open .chevron { transform: rotate(180deg); }
-  .section-label {
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin: 14px 0 8px;
+
+  .day-header:active { background: rgba(255, 255, 255, 0.04); }
+
+  .day-name-line {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
+    min-width: 0;
   }
-  .section-label.lift { color: var(--accent); }
-  .exercise-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.88rem;
+
+  .day-name {
+    font-size: 1.05rem;
+    font-weight: 850;
+    white-space: nowrap;
   }
-  .exercise-table th {
-    text-align: left;
-    color: var(--text-dim);
-    font-size: 0.72rem;
+
+  .today-badge {
+    border-radius: 999px;
+    padding: 3px 7px;
+    background: rgba(123, 216, 143, 0.14);
+    color: var(--green);
+    font-size: 0.66rem;
+    font-weight: 850;
     text-transform: uppercase;
-    padding: 4px 6px;
-    border-bottom: 1px solid var(--border);
+    letter-spacing: 0.04em;
   }
-  .exercise-table td {
-    padding: 8px 6px;
-    border-bottom: 1px solid #222;
-    vertical-align: top;
-  }
-  .exercise-table tr:last-child td { border-bottom: none; }
-  .exercise-name { font-weight: 600; }
-  .sets-reps { color: var(--accent); font-weight: 600; white-space: nowrap; }
-  .weight-col { color: #ffd54f; font-weight: 600; font-size: 0.82rem; white-space: nowrap; }
-  .rest-col { color: var(--text-dim); font-size: 0.8rem; white-space: nowrap; }
-  .note {
-    color: var(--text-dim);
-    font-size: 0.78rem;
-    font-style: italic;
-    margin-top: 8px;
-    line-height: 1.4;
-  }
-  .rest-content {
-    padding: 10px 0;
-    font-size: 0.9rem;
-    line-height: 1.6;
-  }
-  .rest-content li {
-    list-style: none;
-    padding: 4px 0;
-  }
-  .rest-content li::before {
-    content: "- ";
-    color: var(--text-dim);
-  }
-  .overload-section {
-    background: var(--card);
-    border-radius: 12px;
-    padding: 16px;
-    margin-top: 16px;
-    border: 1px solid var(--border);
-  }
-  .overload-section h2 {
-    font-size: 1rem;
-    color: var(--accent);
-    margin-bottom: 10px;
-  }
-  .overload-section table {
-    width: 100%;
-    border-collapse: collapse;
+
+  .day-meta {
+    color: var(--muted);
+    margin-top: 5px;
     font-size: 0.82rem;
+    line-height: 1.25;
   }
-  .overload-section th {
-    text-align: left;
-    color: var(--text-dim);
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    padding: 4px 6px;
-    border-bottom: 1px solid var(--border);
+
+  .tag-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
-  .overload-section td {
-    padding: 6px;
-    border-bottom: 1px solid #222;
+
+  .day-tag {
+    border-radius: 999px;
+    padding: 5px 8px;
+    font-size: 0.7rem;
+    font-weight: 850;
+    white-space: nowrap;
+  }
+
+  .tag-push {
+    background: rgba(107, 211, 255, 0.12);
+    color: var(--push);
+  }
+
+  .tag-pull {
+    background: rgba(199, 155, 255, 0.13);
+    color: var(--pull);
+  }
+
+  .tag-rest {
+    background: rgba(241, 199, 91, 0.13);
+    color: var(--rest);
+  }
+
+  .chevron {
+    color: var(--muted);
+    font-size: 1.05rem;
+    transition: transform 0.18s ease;
+  }
+
+  .day-card.open .chevron { transform: rotate(180deg); }
+
+  .day-body {
+    display: none;
+    padding: 0 14px 14px;
+  }
+
+  .day-card.open .day-body { display: block; }
+
+  .exercise-list {
+    border-top: 1px solid var(--line);
+  }
+
+  .exercise-row {
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 10px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .exercise-row:last-child { border-bottom: 0; }
+
+  .num {
+    width: 26px;
+    height: 26px;
+    display: grid;
+    place-items: center;
+    border-radius: 8px;
+    background: var(--panel-2);
+    color: var(--muted);
+    font-size: 0.74rem;
+    font-weight: 850;
+  }
+
+  .exercise-main {
+    min-width: 0;
+  }
+
+  .exercise-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .exercise-name {
+    font-weight: 800;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+
+  .load {
+    flex: 0 0 auto;
+    color: var(--rest);
+    font-size: 0.78rem;
+    font-weight: 850;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .dose {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 7px;
+  }
+
+  .mini {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--soft);
+    border-radius: 7px;
+    padding: 5px 7px;
+    font-size: 0.76rem;
+    font-weight: 750;
+  }
+
+  .mini.sets { color: var(--push); }
+  .mini.rest { color: var(--muted); }
+
+  .rest-content {
+    border-top: 1px solid var(--line);
+    padding-top: 12px;
+    color: var(--soft);
+    line-height: 1.55;
+    font-size: 0.92rem;
+  }
+
+  .rest-content ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .rest-content li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .rest-content li:last-child { border-bottom: 0; }
+
+  .info-section {
+    border: 1px solid var(--line);
+    background: rgba(23, 27, 34, 0.88);
+    border-radius: 8px;
+    padding: 14px;
+    margin-top: 14px;
+  }
+
+  .info-section h2 {
+    margin: 0 0 10px;
+    font-size: 1rem;
+    color: var(--text);
+  }
+
+  .info-grid {
+    display: grid;
+    gap: 8px;
+  }
+
+  .rule {
+    display: grid;
+    grid-template-columns: 86px 1fr;
+    gap: 10px;
+    padding: 9px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    font-size: 0.84rem;
+    line-height: 1.35;
+  }
+
+  .rule:first-child { border-top: 0; }
+
+  .rule strong {
+    color: var(--push);
+    font-size: 0.78rem;
+  }
+
+  .rule span { color: var(--soft); }
+
+  .quiet-note {
+    color: var(--muted);
+    font-size: 0.82rem;
+    line-height: 1.45;
+    margin: 10px 0 0;
+  }
+
+  @media (max-width: 430px) {
+    body { padding: 12px; }
+    .day-rail {
+      margin: 12px -12px 14px;
+      padding: 10px 12px;
+    }
+    .topbar { gap: 8px; }
+    .gym-pill { padding: 6px 8px; font-size: 0.66rem; }
+    .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .stat { padding: 9px 6px; }
+    .day-header { padding: 13px 12px; }
+    .day-body { padding: 0 12px 12px; }
+    .exercise-top {
+      display: block;
+    }
+    .load {
+      margin-top: 5px;
+      text-align: left;
+      white-space: normal;
+    }
+    .rule {
+      grid-template-columns: 1fr;
+      gap: 3px;
+    }
   }
 </style>
 </head>
 <body>
+<main class="app">
+  <header class="topbar">
+    <div>
+      <h1>Workout Plan</h1>
+      <p class="subtitle">6-day push/pull plan for strength, muscle, legs, and fat loss.</p>
+    </div>
+    <div class="gym-pill">Equinox</div>
+  </header>
 
-<h1>6-Day Push/Pull Plan</h1>
-<p class="subtitle">Equinox | Strength + Hypertrophy + Power</p>
+  <section class="today-panel" id="todayPanel" aria-live="polite"></section>
 
-<div id="days"></div>
+  <nav class="day-rail" id="dayRail" aria-label="Workout days"></nav>
 
-<div class="overload-section">
-  <h2>Progressive Overload</h2>
-  <table>
-    <tr><th>Day Type</th><th>Reps</th><th>Progression</th></tr>
-    <tr><td>A (Strength)</td><td>4-6</td><td>+2.5-5 lbs when all reps clean</td></tr>
-    <tr><td>B (Hypertrophy)</td><td>8-12</td><td>+weight at top rep on all sets</td></tr>
-    <tr><td>C (Power)</td><td>4-6</td><td>Focus bar speed; +weight every 2-3 wks</td></tr>
-  </table>
-  <p class="note">Deload every 4-6 weeks: reduce volume 40%, keep intensity. If performance drops 2+ sessions, deload early.</p>
-</div>
+  <section id="days" aria-label="Weekly workout plan"></section>
+
+  <section class="info-section">
+    <h2>Progressive Overload</h2>
+    <div class="info-grid">
+      <div class="rule"><strong>A days</strong><span>Strength focus. Add 2.5-5 lbs after all reps are clean with 1-2 reps in reserve.</span></div>
+      <div class="rule"><strong>B days</strong><span>Hypertrophy focus. Own the top of the 8-15 rep target before adding weight.</span></div>
+      <div class="rule"><strong>C days</strong><span>Power focus. Use mostly 5-8 reps; add weight every 2-3 weeks when speed stays high.</span></div>
+    </div>
+    <p class="quiet-note">Deload every 4-6 weeks by reducing volume about 40%. Deload earlier if performance drops for 2+ sessions.</p>
+  </section>
+
+  <section class="info-section">
+    <h2>Conditioning</h2>
+    <div class="info-grid">
+      <div class="rule"><strong>Grit Runner</strong><span>Use it like a sled substitute: 6-8 rounds of 20 sec hard effort, then 70-100 sec easy walk.</span></div>
+      <div class="rule"><strong>Zone 2</strong><span>For visceral fat support, aim for 2-4 steady sessions weekly at 25-45 min.</span></div>
+      <div class="rule"><strong>Timing</strong><span>Keep hard intervals away from the day before heavy squats or deadlifts when legs feel beat up.</span></div>
+    </div>
+  </section>
+
+  <section class="info-section">
+    <h2>Knee Notes</h2>
+    <div class="info-grid">
+      <div class="rule"><strong>Squat depth</strong><span>Stop around parallel. No need to chase depth if the right lateral knee gets irritated.</span></div>
+      <div class="rule"><strong>Single leg</strong><span>Keep step-ups and single-leg press smooth, controlled, and pain-free through the full set.</span></div>
+      <div class="rule"><strong>Adjust</strong><span>If a movement talks back, shorten range of motion or use a light leg extension in a clean range.</span></div>
+    </div>
+  </section>
+</main>
 
 <script>
 const days = [
   {
     name: "Sunday",
+    short: "Sun",
     dow: 0,
     tag: "Push A",
     tagClass: "tag-push",
     focus: "Strength",
+    intent: "Strength plus quad volume",
     exercises: [
       ["Barbell Back Squat", "4 x 5", "3 min", "135 lbs"],
       ["Flat Barbell Bench Press", "4 x 5", "3 min", "115 lbs"],
-      ["Overhead Press (barbell)", "3 x 6", "2.5 min", "75 lbs"],
-      ["Leg Press", "3 x 10", "90 sec", "180 lbs"],
-      ["Lateral Raises (cable)", "3 x 12", "60 sec", "15 lbs"],
+      ["Overhead Press (barbell)", "3 x 8", "2 min", "70-75 lbs"],
+      ["Leg Press", "3 x 12-15", "90 sec", "180 lbs"],
+      ["Cable Fly<br>or Machine Chest Press", "2-3 x 10-12", "75 sec", "Moderate"],
+      ["Lateral Raises (cable)", "3 x 12-15", "60 sec", "15 lbs"],
       ["Tricep Rope Pushdown", "3 x 12", "60 sec", "40 lbs"]
     ]
   },
   {
     name: "Monday",
+    short: "Mon",
     dow: 1,
     tag: "Pull A",
     tagClass: "tag-pull",
     focus: "Strength",
+    intent: "Lower-fatigue pull strength",
     exercises: [
-      ["Conventional Deadlift", "4 x 5", "3 min", "155 lbs"],
+      ["Conventional Deadlift", "3 x 5", "3 min", "155 lbs"],
       ["Weighted Pull-Ups", "4 x 6", "2.5 min", "BW"],
-      ["Barbell Row (Pendlay)", "4 x 6", "2.5 min", "115 lbs"],
-      ["Seated Cable Row", "3 x 8", "90 sec", "120 lbs"],
-      ["Lying Leg Curl", "3 x 10", "90 sec", "45 lbs"],
-      ["Barbell Curl", "3 x 8", "60 sec", "60 lbs"],
+      ["Chest-Supported Row<br>or Machine Row", "4 x 8", "2 min", "40 ea<br>or 100-120"],
+      ["Seated Cable Row", "3 x 10", "90 sec", "120 lbs"],
+      ["Lying Leg Curl", "3 x 12-15", "75 sec", "45 lbs"],
+      ["Barbell Curl", "3 x 10", "60 sec", "55-60 lbs"],
       ["Face Pulls", "3 x 15", "60 sec", "30 lbs"]
     ]
   },
   {
     name: "Tuesday",
+    short: "Tue",
     dow: 2,
     tag: "Push B",
     tagClass: "tag-push",
     focus: "Hypertrophy",
+    intent: "Main quad-building day",
     exercises: [
-      ["Hack Squat<br>or Goblet Squat", "3 x 8", "2.5 min", "90-115 lbs<br>or 50-70"],
-      ["Dumbbell Bench Press", "4 x 10", "90 sec", "40 lbs ea"],
-      ["Seated Dumbbell OHP", "3 x 10", "90 sec", "30 lbs ea"],
-      ["Single-Leg Leg Press", "3 x 10/leg", "90 sec", "90 lbs"],
-      ["Lateral Raises (dumbbell)", "3 x 12", "60 sec", "15 lbs ea"],
+      ["Hack Squat", "4 x 8-12", "2.5 min", "90-115 lbs"],
+      ["Dumbbell Bench Press", "4 x 8-12", "90 sec", "40 lbs ea"],
+      ["Seated Dumbbell OHP", "3 x 8-12", "90 sec", "30 lbs ea"],
+      ["Single-Leg Leg Press", "3 x 10-12/leg", "90 sec", "90 lbs"],
+      ["Leg Extension<br>pain-free range", "2-3 x 12-15", "60 sec", "Light-med"],
+      ["Lateral Raises (dumbbell)", "3 x 12-15", "60 sec", "15 lbs ea"],
       ["Overhead Tricep Extension (cable)", "3 x 12", "60 sec", "40 lbs"]
     ]
   },
   {
     name: "Wednesday",
+    short: "Wed",
     dow: 3,
     tag: "Pull B",
     tagClass: "tag-pull",
     focus: "Hypertrophy",
+    intent: "Back, hamstrings, glutes",
     exercises: [
-      ["Romanian Deadlift", "4 x 8", "2.5 min", "115 lbs"],
+      ["Romanian Deadlift", "3 x 8-10", "2.5 min", "115 lbs"],
       ["Lat Pulldown (wide grip)", "4 x 10", "90 sec", "100 lbs"],
+      ["Hip Thrust (barbell)", "3-4 x 8-12", "90 sec", "135 lbs"],
       ["Chest-Supported Row (dumbbell)", "4 x 10", "90 sec", "35 lbs ea"],
       ["Single-Arm Cable Row", "3 x 12", "60 sec", "40 lbs"],
-      ["Seated Leg Curl", "3 x 12", "60 sec", "45 lbs"],
+      ["Seated Leg Curl", "3 x 12-15", "60 sec", "45 lbs"],
       ["Incline Dumbbell Curl", "3 x 10", "60 sec", "20 lbs ea"],
-      ["Reverse Flyes (cable)", "3 x 15", "60 sec", "15 lbs ea"],
-      ["Hip Thrust (barbell)", "3 x 10", "90 sec", "135 lbs"]
+      ["Reverse Flyes (cable)", "3 x 15-20", "60 sec", "15 lbs ea"]
     ]
   },
   {
     name: "Thursday",
+    short: "Thu",
     dow: 4,
     tag: "Push C",
     tagClass: "tag-push",
     focus: "Power",
+    intent: "Speed, triceps, knee-safe legs",
     exercises: [
-      ["Barbell Back Squat (paused)", "4 x 4", "3 min", "115 lbs"],
-      ["Close-Grip Bench Press", "4 x 6", "2.5 min", "95 lbs"],
-      ["Arnold Press", "3 x 10", "90 sec", "25 lbs ea"],
-      ["Box Step-Ups (dumbbell)", "3 x 10/leg", "90 sec", "25 lbs ea"],
-      ["Skull Crushers", "3 x 10", "60 sec", "40 lbs"]
+      ["Paused Back Squat<br>or Safety Bar Squat", "3 x 6-8", "2.5 min", "115 lbs"],
+      ["Close-Grip Bench Press", "3 x 6-8", "2.5 min", "95 lbs"],
+      ["Arnold Press", "3 x 10-12", "90 sec", "25 lbs ea"],
+      ["Box Step-Ups (dumbbell)", "3 x 8-10/leg", "90 sec", "25 lbs ea"],
+      ["Skull Crushers", "3 x 10-12", "60 sec", "40 lbs"],
+      ["Standing Calf Raises", "3 x 12-15", "60 sec", "135 lbs"]
     ]
   },
   {
     name: "Friday",
+    short: "Fri",
     dow: 5,
     tag: "Pull C",
     tagClass: "tag-pull",
     focus: "Power + Metabolic",
+    intent: "Posterior chain plus Grit Runner",
     exercises: [
-      ["Rack Pull / Block Deadlift", "4 x 4", "3 min", "175 lbs"],
+      ["Trap Bar Deadlift<br>or Rack Pull", "3 x 5-6", "3 min", "175 lbs"],
       ["Chin-Ups (weighted)", "4 x 6", "2.5 min", "BW"],
       ["Meadows Row", "3 x 8", "90 sec", "35 lbs"],
       ["Straight-Arm Pulldown", "3 x 12", "60 sec", "40 lbs"],
-      ["Single-Leg RDL (dumbbell)", "3 x 8/leg", "90 sec", "25-30 lbs ea"],
+      ["Single-Leg RDL (dumbbell)", "3 x 8-10/leg", "90 sec", "25-30 lbs ea"],
       ["Hammer Curl", "3 x 10", "60 sec", "25 lbs ea"],
       ["Band Pull-Aparts", "3 x 20", "45 sec", "Light band"],
-      ["Calf Raises (standing)", "4 x 12", "60 sec", "135 lbs"]
+      ["Grit Runner Finisher", "6-8 rounds", "70-100 sec easy", "20 sec hard"]
     ]
   },
   {
     name: "Saturday",
+    short: "Sat",
     dow: 6,
     tag: "REST",
     tagClass: "tag-rest",
     focus: "Recovery",
+    intent: "Zone 2, mobility, sleep",
     exercises: [],
     rest: true
   }
@@ -303,69 +620,112 @@ function getToday() {
   return new Date().getDay();
 }
 
+function renderToday(today) {
+  const day = days.find(item => item.dow === today);
+  const panel = document.getElementById("todayPanel");
+  const liftCount = days.filter(item => !item.rest).length;
+  panel.innerHTML = `
+    <div class="today-kicker">Today</div>
+    <div class="today-title">
+      <strong>${day.name} - ${day.tag}</strong>
+      <span class="day-tag ${day.tagClass}">${day.focus}</span>
+    </div>
+    <div class="today-focus">${day.intent}</div>
+    <div class="stats">
+      <div class="stat"><strong>${liftCount}</strong><span>lifting days</span></div>
+      <div class="stat"><strong>3x</strong><span>quad touches</span></div>
+      <div class="stat"><strong>3x</strong><span>posterior chain</span></div>
+    </div>
+  `;
+}
+
+function renderRail(today) {
+  const rail = document.getElementById("dayRail");
+  rail.innerHTML = days.map(day => `
+    <a class="day-link ${day.dow === today ? "today" : ""}" href="#day-${day.dow}">
+      ${day.short}
+    </a>
+  `).join("");
+}
+
+function exerciseMarkup(exercise, index) {
+  return `
+    <div class="exercise-row">
+      <div class="num">${index + 1}</div>
+      <div class="exercise-main">
+        <div class="exercise-top">
+          <div class="exercise-name">${exercise[0]}</div>
+          <div class="load">${exercise[3] || "--"}</div>
+        </div>
+        <div class="dose">
+          <span class="mini sets">${exercise[1]}</span>
+          <span class="mini rest">${exercise[2]}</span>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
 function renderDays() {
   const container = document.getElementById("days");
   const today = getToday();
 
-  days.forEach(day => {
+  container.innerHTML = days.map(day => {
     const isToday = day.dow === today;
-    const card = document.createElement("div");
-    card.className = "day-card" + (isToday ? " today open" : "");
-
     let bodyHTML = "";
 
     if (day.rest) {
       bodyHTML = `
         <div class="rest-content">
           <ul>
-            <li>Foam rolling / mobility work (15-20 min)</li>
+            <li>Foam rolling / mobility work, 15-20 min</li>
             <li>Light stretching or yoga</li>
+            <li>30-45 min Zone 2 on Grit Runner, treadmill, bike, or elliptical</li>
             <li>Walk for active recovery</li>
-            <li>Prioritize sleep (7-9 hours)</li>
+            <li>Prioritize sleep, 7-9 hours</li>
           </ul>
         </div>
       `;
     } else {
-      let tableHTML = `
-        <div class="section-label lift">${day.focus}</div>
-        <table class="exercise-table">
-          <tr><th>Exercise</th><th>Sets x Reps</th><th>Weight</th><th>Rest</th></tr>
+      bodyHTML = `
+        <div class="exercise-list">
+          ${day.exercises.map(exerciseMarkup).join("")}
+        </div>
       `;
-      day.exercises.forEach(ex => {
-        tableHTML += `<tr>
-          <td class="exercise-name">${ex[0]}</td>
-          <td class="sets-reps">${ex[1]}</td>
-          <td class="weight-col">${ex[3] || '--'}</td>
-          <td class="rest-col">${ex[2]}</td>
-        </tr>`;
-      });
-      tableHTML += "</table>";
-
-      bodyHTML = tableHTML;
     }
 
-    card.innerHTML = `
-      <div class="day-header" onclick="toggleDay(this)">
-        <div>
-          <span class="day-name">${day.name}</span>
-          ${isToday ? '<span class="today-badge">TODAY</span>' : ''}
-        </div>
-        <div style="display:flex;align-items:center;gap:8px;">
-          <span class="day-tag ${day.tagClass}">${day.tag} ${!day.rest ? '- ' + day.focus : ''}</span>
-          <span class="chevron">&#9660;</span>
-        </div>
-      </div>
-      <div class="day-body">${bodyHTML}</div>
+    return `
+      <article class="day-card ${isToday ? "today open" : ""}" id="day-${day.dow}">
+        <button class="day-header" type="button" aria-expanded="${isToday ? "true" : "false"}">
+          <div>
+            <div class="day-name-line">
+              <span class="day-name">${day.name}</span>
+              ${isToday ? '<span class="today-badge">Today</span>' : ""}
+            </div>
+            <div class="day-meta">${day.intent}</div>
+          </div>
+          <div class="tag-wrap">
+            <span class="day-tag ${day.tagClass}">${day.tag}</span>
+            <span class="chevron" aria-hidden="true">v</span>
+          </div>
+        </button>
+        <div class="day-body">${bodyHTML}</div>
+      </article>
     `;
+  }).join("");
 
-    container.appendChild(card);
+  document.querySelectorAll(".day-header").forEach(button => {
+    button.addEventListener("click", () => {
+      const card = button.closest(".day-card");
+      const isOpen = card.classList.toggle("open");
+      button.setAttribute("aria-expanded", String(isOpen));
+    });
   });
 }
 
-function toggleDay(header) {
-  header.parentElement.classList.toggle("open");
-}
-
+const today = getToday();
+renderToday(today);
+renderRail(today);
 renderDays();
 </script>
 </body>
