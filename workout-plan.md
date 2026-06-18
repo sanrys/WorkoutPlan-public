@@ -9,15 +9,15 @@
 
 | Day | Split | Focus |
 |-----|-------|-------|
-| **Sunday** | Push A | Strength |
-| **Monday** | Pull A | Strength |
-| **Tuesday** | Push B | Hypertrophy |
-| **Wednesday** | Pull B | Hypertrophy |
-| **Thursday** | Push C | Power |
-| **Friday** | Pull C | Power + Metabolic |
-| **Saturday** | **REST** | Recovery, stretching, mobility |
+| **Sunday** | Push A | Strength + Quads |
+| **Monday** | Pull A | Strength, lower fatigue |
+| **Tuesday** | Push B | Quad + Chest Hypertrophy |
+| **Wednesday** | Pull B | Back + Posterior Hypertrophy |
+| **Thursday** | Push C | Power + Knee-Safe Legs |
+| **Friday** | Pull C | Posterior Chain + Conditioning |
+| **Saturday** | **REST** | Recovery, Zone 2, mobility |
 
-> **Leg integration:** Quads on Push days (squats, leg press, step-ups). Hamstrings/glutes on Pull days (deadlifts, RDLs, leg curls). Legs hit **3x/week**.
+> **Leg integration:** Quads on Push days (squats, hack squat, leg press, step-ups). Hamstrings/glutes on Pull days (deadlifts, RDLs, leg curls, hip thrusts). Legs hit **3x/week** with Tuesday as the primary quad-building day.
 
 > **Knee considerations (right knee, lateral):** Stop back squat at parallel (90°) — no deeper. Single-leg work replaces Bulgarian split squats / walking lunges to avoid lateral knee stress during deep unilateral knee flexion. If any replacement movement triggers lateral knee pain, shorten ROM or sub leg extension (light, pain-free range).
 
@@ -29,10 +29,11 @@
 |---|----------|-------------|------|-----------------|
 | 1 | Barbell Back Squat | 4 x 5 | 3 min | 135 lbs (bar + 90) |
 | 2 | Flat Barbell Bench Press | 4 x 5 | 3 min | 115 lbs (bar + 70) |
-| 3 | Overhead Press (barbell) | 3 x 6 | 2.5 min | 75 lbs (bar + 30) |
-| 4 | Leg Press | 3 x 10 | 90 sec | 180 lbs |
-| 5 | Lateral Raises (cable) | 3 x 12 | 60 sec | 15 lbs |
-| 6 | Tricep Rope Pushdown | 3 x 12 | 60 sec | 40 lbs |
+| 3 | Overhead Press (barbell) | 3 x 8 | 2 min | 70-75 lbs |
+| 4 | Leg Press | 3 x 12-15 | 90 sec | 180 lbs |
+| 5 | Cable Fly / Machine Chest Press | 2-3 x 10-12 | 75 sec | Moderate |
+| 6 | Lateral Raises (cable) | 3 x 12-15 | 60 sec | 15 lbs |
+| 7 | Tricep Rope Pushdown | 3 x 12 | 60 sec | 40 lbs |
 
 **Form references:**
 - Squat: [Jeff Nippard - How To Squat For Growth](https://www.youtube.com/watch?v=0jn4b4WjEGc)
@@ -45,12 +46,12 @@
 
 | # | Exercise | Sets x Reps | Rest | Suggested Weight |
 |---|----------|-------------|------|-----------------|
-| 1 | Conventional Deadlift | 4 x 5 | 3 min | 155 lbs (bar + 110) |
+| 1 | Conventional Deadlift | 3 x 5 | 3 min | 155 lbs (bar + 110) |
 | 2 | Weighted Pull-Ups | 4 x 6 | 2.5 min | Bodyweight (add weight when hitting 6 reps) |
-| 3 | Barbell Row (Pendlay) | 4 x 6 | 2.5 min | 115 lbs (bar + 70) |
-| 4 | Seated Cable Row | 3 x 8 | 90 sec | 120 lbs |
-| 5 | Lying Leg Curl | 3 x 10 | 90 sec | 45 lbs |
-| 6 | Barbell Curl | 3 x 8 | 60 sec | 60 lbs (EZ bar) |
+| 3 | Chest-Supported Row / Machine Row | 4 x 8 | 2 min | 40 lbs each / 100-120 lbs |
+| 4 | Seated Cable Row | 3 x 10 | 90 sec | 120 lbs |
+| 5 | Lying Leg Curl | 3 x 12-15 | 75 sec | 45 lbs |
+| 6 | Barbell Curl | 3 x 10 | 60 sec | 55-60 lbs (EZ bar) |
 | 7 | Face Pulls | 3 x 15 | 60 sec | 30 lbs |
 
 **Form references:**
@@ -64,12 +65,13 @@
 
 | # | Exercise | Sets x Reps | Rest | Suggested Weight |
 |---|----------|-------------|------|-----------------|
-| 1 | Hack Squat / Goblet Squat | 3 x 8 | 2.5 min | 90-115 lbs / 50-70 lb DB |
-| 2 | Dumbbell Bench Press | 4 x 10 | 90 sec | 40 lbs each |
-| 3 | Seated Dumbbell OHP | 3 x 10 | 90 sec | 30 lbs each |
-| 4 | Single-Leg Leg Press | 3 x 10/leg | 90 sec | 90 lbs |
-| 5 | Lateral Raises (dumbbell) | 3 x 12 | 60 sec | 15 lbs each |
-| 6 | Overhead Tricep Extension (cable) | 3 x 12 | 60 sec | 40 lbs |
+| 1 | Hack Squat | 4 x 8-12 | 2.5 min | 90-115 lbs |
+| 2 | Dumbbell Bench Press | 4 x 8-12 | 90 sec | 40 lbs each |
+| 3 | Seated Dumbbell OHP | 3 x 8-12 | 90 sec | 30 lbs each |
+| 4 | Single-Leg Leg Press | 3 x 10-12/leg | 90 sec | 90 lbs |
+| 5 | Leg Extension (pain-free range) | 2-3 x 12-15 | 60 sec | Light-moderate |
+| 6 | Lateral Raises (dumbbell) | 3 x 12-15 | 60 sec | 15 lbs each |
+| 7 | Overhead Tricep Extension (cable) | 3 x 12 | 60 sec | 40 lbs |
 
 **Form references:**
 - Hack Squat: [Jeff Nippard - How To Hack Squat](https://www.youtube.com/watch?v=EaLqbnbiywc)
@@ -83,14 +85,14 @@
 
 | # | Exercise | Sets x Reps | Rest | Suggested Weight |
 |---|----------|-------------|------|-----------------|
-| 1 | Romanian Deadlift | 4 x 8 | 2.5 min | 115 lbs (bar + 70) |
+| 1 | Romanian Deadlift | 3 x 8-10 | 2.5 min | 115 lbs (bar + 70) |
 | 2 | Lat Pulldown (wide grip) | 4 x 10 | 90 sec | 100 lbs |
-| 3 | Chest-Supported Row (dumbbell) | 4 x 10 | 90 sec | 35 lbs each |
-| 4 | Single-Arm Cable Row | 3 x 12 | 60 sec | 40 lbs |
-| 5 | Seated Leg Curl | 3 x 12 | 60 sec | 45 lbs |
-| 6 | Incline Dumbbell Curl | 3 x 10 | 60 sec | 20 lbs each |
-| 7 | Reverse Flyes (cable) | 3 x 15 | 60 sec | 15 lbs each |
-| 8 | Hip Thrust (barbell) | 3 x 10 | 90 sec | 135 lbs (bar + 90) |
+| 3 | Hip Thrust (barbell) | 3-4 x 8-12 | 90 sec | 135 lbs (bar + 90) |
+| 4 | Chest-Supported Row (dumbbell) | 4 x 10 | 90 sec | 35 lbs each |
+| 5 | Single-Arm Cable Row | 3 x 12 | 60 sec | 40 lbs |
+| 6 | Seated Leg Curl | 3 x 12-15 | 60 sec | 45 lbs |
+| 7 | Incline Dumbbell Curl | 3 x 10 | 60 sec | 20 lbs each |
+| 8 | Reverse Flyes (cable) | 3 x 15-20 | 60 sec | 15 lbs each |
 
 **Form references:**
 - RDL: [Jeff Nippard - Romanian Deadlift](https://www.youtube.com/watch?v=_oyxCn2iSjU)
@@ -103,11 +105,12 @@
 
 | # | Exercise | Sets x Reps | Rest | Suggested Weight |
 |---|----------|-------------|------|-----------------|
-| 1 | Barbell Back Squat (paused) | 4 x 4 | 3 min | 115 lbs (bar + 70) |
-| 2 | Close-Grip Bench Press | 4 x 6 | 2.5 min | 95 lbs (bar + 50) |
-| 3 | Arnold Press | 3 x 10 | 90 sec | 25 lbs each |
-| 4 | Box Step-Ups (dumbbell) | 3 x 10/leg | 90 sec | 25 lbs each, 18" box |
-| 5 | Skull Crushers | 3 x 10 | 60 sec | 40 lbs (EZ bar) |
+| 1 | Paused Back Squat / Safety Bar Squat | 3 x 6-8 | 2.5 min | 115 lbs |
+| 2 | Close-Grip Bench Press | 3 x 6-8 | 2.5 min | 95 lbs (bar + 50) |
+| 3 | Arnold Press | 3 x 10-12 | 90 sec | 25 lbs each |
+| 4 | Box Step-Ups (dumbbell) | 3 x 8-10/leg | 90 sec | 25 lbs each, 18" box |
+| 5 | Skull Crushers | 3 x 10-12 | 60 sec | 40 lbs (EZ bar) |
+| 6 | Standing Calf Raises | 3 x 12-15 | 60 sec | 135 lbs |
 
 **Form references:**
 - Paused Squat: [Renaissance Periodization](https://www.youtube.com/watch?v=bEv6CCg2BC8)
@@ -121,14 +124,14 @@
 
 | # | Exercise | Sets x Reps | Rest | Suggested Weight |
 |---|----------|-------------|------|-----------------|
-| 1 | Rack Pull / Block Deadlift | 4 x 4 | 3 min | 175 lbs (bar + 130) |
+| 1 | Trap Bar Deadlift / Rack Pull | 3 x 5-6 | 3 min | 175 lbs |
 | 2 | Chin-Ups (weighted) | 4 x 6 | 2.5 min | Bodyweight (add weight when hitting 6 reps) |
 | 3 | Meadows Row | 3 x 8 | 90 sec | 35 lbs |
 | 4 | Straight-Arm Pulldown | 3 x 12 | 60 sec | 40 lbs |
-| 5 | Single-Leg RDL (dumbbell) | 3 x 8/leg | 90 sec | 25-30 lbs each hand |
+| 5 | Single-Leg RDL (dumbbell) | 3 x 8-10/leg | 90 sec | 25-30 lbs each hand |
 | 6 | Hammer Curl | 3 x 10 | 60 sec | 25 lbs each |
 | 7 | Band Pull-Aparts | 3 x 20 | 45 sec | Light band |
-| 8 | Calf Raises (standing) | 4 x 12 | 60 sec | 135 lbs |
+| 8 | Grit Runner Finisher | 6-8 rounds | 70-100 sec easy between rounds | 20 sec hard effort |
 
 **Form references:**
 - Meadows Row: [John Meadows (Mountain Dog)](https://www.youtube.com/watch?v=VrPMWjIwsGE)
@@ -141,6 +144,7 @@
 
 - Foam rolling / mobility work (15-20 min)
 - Light stretching or yoga
+- 30-45 min Zone 2 on Grit Runner, treadmill, bike, or elliptical
 - Walk for active recovery
 - Prioritize sleep (7-9 hours)
 
@@ -148,13 +152,13 @@
 
 ## Progressive Overload Strategy
 
-Use **double progression** -- hit the top of the rep range with good form across all sets before adding weight:
+Use **double progression** -- hit the top of the rep range with good form across all sets before adding weight. Keep 1-2 reps in reserve on most sets; push closer to failure only on safer isolation work.
 
 | Day Type | Rep Scheme | Progression Rule |
 |----------|-----------|-----------------|
-| **A days (Strength)** | 4-6 reps | Add 2.5-5 lbs when you hit all reps cleanly |
-| **B days (Hypertrophy)** | 8-12 reps | Add weight when you hit top rep target on all sets |
-| **C days (Power)** | 4-6 reps | Focus on bar speed; add weight every 2-3 weeks |
+| **A days (Strength)** | 4-6 reps | Add 2.5-5 lbs when all reps are clean with 1-2 reps in reserve |
+| **B days (Hypertrophy)** | 8-15 reps | Add weight when you hit the top target on all sets |
+| **C days (Power)** | 5-8 reps | Focus on bar speed; add weight every 2-3 weeks only if speed stays high |
 
 **Deload:** Every 4-6 weeks, reduce volume by 40% while keeping intensity. Listen to your body -- if performance drops for 2+ sessions, deload early.
 
@@ -174,6 +178,20 @@ To prevent staleness and keep progress going, swap **one exercise per day** afte
 | Pull C | Meadows Row | Chest-Supported T-Bar Row |
 
 Keep sets/reps/rest the same. Rotate back after next block.
+
+---
+
+## Conditioning for Fat Loss + Visceral Fat
+
+Use the Tru Grit / manual runner as a sled substitute and Zone 2 tool. Conditioning should support the lifting, not crush leg recovery.
+
+| Type | Frequency | Prescription |
+|------|-----------|--------------|
+| **Zone 2** | 2-4x/week | 25-45 min steady pace; breathing elevated but controlled |
+| **Grit Runner Intervals** | 1x/week | 6-8 rounds: 20 sec hard effort + 70-100 sec easy walk |
+| **Steps** | Daily | Aim for 8,000-10,000+ steps |
+
+Best placement: Zone 2 on Saturday and 1-2 easy evenings; short Grit Runner intervals after Friday Pull C or Thursday Push C if legs feel fresh. Avoid hard intervals the night before heavy squats/deadlifts.
 
 ---
 
