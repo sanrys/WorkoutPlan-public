@@ -67,11 +67,12 @@
 |---|----------|-------------|------|-----------------|
 | 1 | Hack Squat | 4 x 8-12 | 2.5 min | 90-115 lbs |
 | 2 | Dumbbell Bench Press | 4 x 8-12 | 90 sec | 40 lbs each |
-| 3 | Seated Dumbbell OHP | 3 x 8-12 | 90 sec | 30 lbs each |
-| 4 | Single-Leg Leg Press | 3 x 10-12/leg | 90 sec | 90 lbs |
-| 5 | Leg Extension (pain-free range) | 2-3 x 12-15 | 60 sec | Light-moderate |
-| 6 | Lateral Raises (dumbbell) | 3 x 12-15 | 60 sec | 15 lbs each |
-| 7 | Overhead Tricep Extension (cable) | 3 x 12 | 60 sec | 40 lbs |
+| 3 | Pec Deck / Butterfly Machine | 3 x 12-15 | 60-75 sec | Controlled squeeze |
+| 4 | Seated Dumbbell OHP | 3 x 8-12 | 90 sec | 30 lbs each |
+| 5 | Single-Leg Leg Press | 3 x 10-12/leg | 90 sec | 90 lbs |
+| 6 | Leg Extension (pain-free range) | 2-3 x 12-15 | 60 sec | Light-moderate |
+| 7 | Lateral Raises (dumbbell) | 2-3 x 12-15 | 60 sec | 15 lbs each |
+| 8 | Overhead Tricep Extension (cable) | 3 x 12 | 60 sec | 40 lbs |
 
 **Form references:**
 - Hack Squat: [Jeff Nippard - How To Hack Squat](https://www.youtube.com/watch?v=EaLqbnbiywc)
