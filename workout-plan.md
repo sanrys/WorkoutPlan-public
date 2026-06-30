@@ -163,7 +163,9 @@ Use **double progression** -- hit the top of the rep range with good form across
 | **B days (Hypertrophy)** | 8-15 reps | Add weight when you hit the top target on all sets |
 | **C days (Power)** | 5-8 reps | Focus on bar speed; add weight every 2-3 weeks only if speed stays high |
 
-**Deload:** Every 4-6 weeks, reduce volume by 40% while keeping intensity. Listen to your body -- if performance drops for 2+ sessions, deload early.
+**Deload schedule:** Training block starts **2026-07-01** with the Wednesday reset. Weeks 1-4 are normal training. Week 5 is a deload check week: deload if performance is down for 2+ sessions, joints feel cranky, sleep/recovery is poor, motivation is unusually low, or warm-up weights feel heavier than normal. If training still feels good, keep normal weights but stop 2-3 reps shy of failure and avoid extra volume for that week.
+
+**Deload method:** Deload does not mean starting over or dropping all weight. Reduce sets by about 30-40%, keep technique crisp, and use slightly easier loads only if joints or bar speed ask for it. If you already self-regulate by not increasing weight when reps are not clean, you may not need a full deload every block; use the scheduled flag as a check-in, not a punishment.
 
 ---
 
