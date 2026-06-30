@@ -21,6 +21,8 @@
 
 > **Knee considerations (right knee, lateral):** Stop back squat at parallel (90°) — no deeper. Single-leg work replaces Bulgarian split squats / walking lunges to avoid lateral knee stress during deep unilateral knee flexion. If any replacement movement triggers lateral knee pain, shorten ROM or sub leg extension (light, pain-free range).
 
+> **Missed-day reset rule:** If the week drifts because sessions were skipped or shifted, do not try to make up every missed day. Use the next sensible Push/Pull bridge session based on fatigue, avoid stacking heavy posterior-chain days, and reset back to the normal weekly schedule on Wednesday.
+
 ---
 
 ## Sunday - PUSH A (Strength)
@@ -188,11 +190,13 @@ Use the Tru Grit / manual runner as a sled substitute and Zone 2 tool. Condition
 
 | Type | Frequency | Prescription |
 |------|-----------|--------------|
-| **Zone 2** | 2-4x/week | 25-45 min steady pace; breathing elevated but controlled |
+| **Zone 2** | 2-4x/week | 10-20 min after strength; 25-45 min on rest/separate cardio days |
 | **Grit Runner Intervals** | 1x/week | 6-8 rounds: 20 sec hard effort + 70-100 sec easy walk |
 | **Steps** | Daily | Aim for 8,000-10,000+ steps |
 
-Best placement: Zone 2 on Saturday and 1-2 easy evenings; short Grit Runner intervals after Friday Pull C or Thursday Push C if legs feel fresh. Avoid hard intervals the night before heavy squats/deadlifts.
+Best placement: lift first, then add 10-20 min easy Zone 2 after strength when recovery allows. Use 25-45 min Zone 2 on Saturday/rest days or separate cardio-only days. Short Grit Runner intervals can go after Friday Pull C or Thursday Push C if legs feel fresh. Avoid hard intervals the night before heavy squats/deadlifts.
+
+**Core/abs placement:** Before strength, keep ab work to a 5-8 min activation primer only: dead bugs, Pallof press, plank, or side plank. Avoid hard ab fatigue before squats, deadlifts, rows, or overhead pressing. Put harder ab work after lifting or after Zone 2, 2-3x/week.
 
 ---
 
