@@ -142,6 +142,35 @@
     line-height: 1.25;
   }
 
+  .deload-alert {
+    border: 1px solid rgba(241, 199, 91, 0.34);
+    background: rgba(241, 199, 91, 0.08);
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+  .deload-alert.check {
+    border-color: rgba(255, 138, 101, 0.44);
+    background: rgba(255, 138, 101, 0.1);
+  }
+
+  .deload-alert strong {
+    display: block;
+    color: var(--rest);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .deload-alert span {
+    display: block;
+    color: var(--soft);
+    font-size: 0.82rem;
+    line-height: 1.35;
+    margin-top: 4px;
+  }
+
   .day-rail {
     position: sticky;
     top: 0;
@@ -479,7 +508,7 @@
       <div class="rule"><strong>B days</strong><span>Hypertrophy focus. Own the top of the 8-15 rep target before adding weight.</span></div>
       <div class="rule"><strong>C days</strong><span>Power focus. Use mostly 5-8 reps; add weight every 2-3 weeks when speed stays high.</span></div>
     </div>
-    <p class="quiet-note">Deload every 4-6 weeks by reducing volume about 40%. Deload earlier if performance drops for 2+ sessions.</p>
+    <p class="quiet-note">Block starts 2026-07-01. Week 5 is a deload check: reduce sets 30-40% only if performance, joints, sleep, or motivation are trending down.</p>
   </section>
 
   <section class="info-section">
@@ -632,10 +661,45 @@ function getToday() {
   return new Date().getDay();
 }
 
+const blockStartDate = new Date("2026-07-01T00:00:00");
+
+function getTrainingBlockStatus() {
+  const now = new Date();
+  const todayDate = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const startDate = new Date(blockStartDate.getFullYear(), blockStartDate.getMonth(), blockStartDate.getDate());
+  const elapsedDays = Math.floor((todayDate - startDate) / 86400000);
+
+  if (elapsedDays < 0) {
+    return {
+      check: false,
+      title: "Reset starts tomorrow",
+      text: "Use today as a bridge/recovery day. Block Week 1 begins on Wednesday."
+    };
+  }
+
+  const blockDay = elapsedDays % 35;
+  const week = Math.floor(blockDay / 7) + 1;
+
+  if (week === 5) {
+    return {
+      check: true,
+      title: "Week 5 deload check",
+      text: "Deload if performance is down, joints feel cranky, or recovery is poor. If you feel strong, keep weights steady and avoid extra volume."
+    };
+  }
+
+  return {
+    check: false,
+    title: `Training block week ${week}`,
+    text: "Train normally. Add weight only when reps are clean; missed reps alone do not mean you need a deload."
+  };
+}
+
 function renderToday(today) {
   const day = days.find(item => item.dow === today);
   const panel = document.getElementById("todayPanel");
   const liftCount = days.filter(item => !item.rest).length;
+  const block = getTrainingBlockStatus();
   panel.innerHTML = `
     <div class="today-kicker">Today</div>
     <div class="today-title">
@@ -647,6 +711,10 @@ function renderToday(today) {
       <div class="stat"><strong>${liftCount}</strong><span>lifting days</span></div>
       <div class="stat"><strong>3x</strong><span>quad touches</span></div>
       <div class="stat"><strong>3x</strong><span>posterior chain</span></div>
+    </div>
+    <div class="deload-alert ${block.check ? "check" : ""}">
+      <strong>${block.title}</strong>
+      <span>${block.text}</span>
     </div>
   `;
 }
