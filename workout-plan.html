@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Workout Plan</title>
+<title>Workout Plan V2</title>
 <style>
   :root {
     --bg: #0f1115;
@@ -291,6 +291,11 @@
     color: var(--pull);
   }
 
+  .tag-power {
+    background: rgba(255, 138, 101, 0.13);
+    color: var(--power);
+  }
+
   .tag-rest {
     background: rgba(241, 199, 91, 0.13);
     color: var(--rest);
@@ -480,10 +485,10 @@
 <main class="app">
   <header class="topbar">
     <div>
-      <h1>Workout Plan</h1>
-      <p class="subtitle">6-day push/pull plan for strength, muscle, legs, and fat loss.</p>
+      <h1>Workout Plan V2</h1>
+      <p class="subtitle">V2 hybrid split for leg growth, upper-body progress, cardio, and recovery.</p>
     </div>
-    <div class="gym-pill">Equinox</div>
+    <div class="gym-pill">V2 Hybrid</div>
   </header>
 
   <section class="today-panel" id="todayPanel" aria-live="polite"></section>
@@ -493,9 +498,9 @@
   <section class="info-section">
     <h2>Missed-Day Reset</h2>
     <div class="info-grid">
-      <div class="rule"><strong>Bridge</strong><span>When days are skipped or shifted, use the next sensible Push/Pull session based on fatigue.</span></div>
-      <div class="rule"><strong>Protect legs</strong><span>Avoid stacking heavy posterior-chain days; keep bridge sessions conservative when sore.</span></div>
-      <div class="rule"><strong>Wednesday</strong><span>Reset back to the normal weekly schedule on Wednesday instead of making up every missed day.</span></div>
+      <div class="rule"><strong>Bridge</strong><span>When days are skipped or shifted, use the next sensible session based on fatigue.</span></div>
+      <div class="rule"><strong>Protect legs</strong><span>Keep Tuesday as quad day and Thursday as posterior-chain day. Do not stack hard leg days.</span></div>
+      <div class="rule"><strong>Wednesday</strong><span>Use Wednesday as the reset anchor: Zone 2, core, mobility, then resume the normal schedule.</span></div>
     </div>
   </section>
 
@@ -504,21 +509,20 @@
   <section class="info-section">
     <h2>Progressive Overload</h2>
     <div class="info-grid">
-      <div class="rule"><strong>A days</strong><span>Strength focus. Add 2.5-5 lbs after all reps are clean with 1-2 reps in reserve.</span></div>
-      <div class="rule"><strong>B days</strong><span>Hypertrophy focus. Own the top of the 8-15 rep target before adding weight.</span></div>
-      <div class="rule"><strong>C days</strong><span>Power focus. Use mostly 5-8 reps; add weight every 2-3 weeks when speed stays high.</span></div>
+      <div class="rule"><strong>Compounds</strong><span>Add 2.5-5 lbs only after all reps are clean with 1-2 reps in reserve.</span></div>
+      <div class="rule"><strong>Isolation</strong><span>Add reps first, then small weight increases once the top of the range is owned.</span></div>
+      <div class="rule"><strong>Legs</strong><span>Prioritize controlled reps, knee comfort, and recovery over chasing load every week.</span></div>
     </div>
-    <p class="quiet-note">Block starts 2026-07-01. Week 5 is a deload check: reduce sets 30-40% only if performance, joints, sleep, or motivation are trending down.</p>
+    <p class="quiet-note">V2 block starts 2026-07-05. Week 5 is a deload check: reduce sets 30-40% only if performance, joints, sleep, or motivation are trending down.</p>
   </section>
 
   <section class="info-section">
     <h2>Conditioning</h2>
     <div class="info-grid">
-      <div class="rule"><strong>Grit Runner</strong><span>Use it like a sled substitute: 6-8 rounds of 20 sec hard effort, then 70-100 sec easy walk.</span></div>
-      <div class="rule"><strong>After strength</strong><span>Default to 10-20 min easy Zone 2 after lifting when recovery allows.</span></div>
-      <div class="rule"><strong>Longer cardio</strong><span>Use 25-45 min Zone 2 on Saturday/rest days or separate cardio-only days.</span></div>
-      <div class="rule"><strong>Abs</strong><span>Before lifting, keep core to 5-8 min activation. Do harder ab work after lifting or cardio.</span></div>
-      <div class="rule"><strong>Timing</strong><span>Keep hard intervals away from the day before heavy squats or deadlifts when legs feel beat up.</span></div>
+      <div class="rule"><strong>After lift</strong><span>Use 10-20 min easy Zone 2 after upper days when recovery allows.</span></div>
+      <div class="rule"><strong>Longer</strong><span>Use 25-45 min Zone 2 on Wednesday or Saturday for visceral-fat support.</span></div>
+      <div class="rule"><strong>Intervals</strong><span>Grit Runner intervals are optional, 0-1x/week, only when legs feel fresh.</span></div>
+      <div class="rule"><strong>Abs</strong><span>Before lifting, keep core to activation. Do harder ab work on Wednesday or Friday.</span></div>
     </div>
   </section>
 
@@ -538,110 +542,112 @@ const days = [
     name: "Sunday",
     short: "Sun",
     dow: 0,
-    tag: "Push A",
+    tag: "Push",
     tagClass: "tag-push",
-    focus: "Strength",
-    intent: "Strength plus quad volume",
+    focus: "Chest + Shoulders + Triceps",
+    intent: "Upper push strength and hypertrophy",
     exercises: [
-      ["Barbell Back Squat", "4 x 5", "3 min", "135 lbs"],
-      ["Flat Barbell Bench Press", "4 x 5", "3 min", "115 lbs"],
-      ["Overhead Press (barbell)", "3 x 8", "2 min", "70-75 lbs"],
-      ["Leg Press", "3 x 12-15", "90 sec", "180 lbs"],
-      ["Cable Fly<br>or Machine Chest Press", "2-3 x 10-12", "75 sec", "Moderate"],
-      ["Lateral Raises (cable)", "3 x 12-15", "60 sec", "15 lbs"],
-      ["Tricep Rope Pushdown", "3 x 12", "60 sec", "40 lbs"]
+      ["Flat Barbell Bench Press", "4 x 5-6", "2.5-3 min", "115 lbs"],
+      ["Incline Dumbbell Press", "3 x 8-12", "90 sec", "35-40 lbs ea"],
+      ["Pec Deck<br>or Machine Chest Press", "3 x 10-15", "75 sec", "Controlled"],
+      ["Seated Dumbbell OHP", "3 x 8-10", "90 sec", "30 lbs ea"],
+      ["Cable Lateral Raise", "3 x 12-15", "60 sec", "15 lbs"],
+      ["Tricep Rope Pushdown", "3 x 10-12", "60 sec", "40 lbs"],
+      ["Overhead Cable Tricep Extension", "2-3 x 12-15", "60 sec", "35-40 lbs"],
+      ["Optional Zone 2", "10-15 min", "Easy", "If fresh"]
     ]
   },
   {
     name: "Monday",
     short: "Mon",
     dow: 1,
-    tag: "Pull A",
+    tag: "Pull",
     tagClass: "tag-pull",
-    focus: "Strength",
-    intent: "Lower-fatigue pull strength",
+    focus: "Back + Biceps",
+    intent: "Upper pull without heavy leg fatigue",
     exercises: [
-      ["Conventional Deadlift", "3 x 5", "3 min", "155 lbs"],
-      ["Weighted Pull-Ups", "4 x 6", "2.5 min", "BW"],
-      ["Chest-Supported Row<br>or Machine Row", "4 x 8", "2 min", "40 ea<br>or 100-120"],
-      ["Seated Cable Row", "3 x 10", "90 sec", "120 lbs"],
-      ["Lying Leg Curl", "3 x 12-15", "75 sec", "45 lbs"],
-      ["Barbell Curl", "3 x 10", "60 sec", "55-60 lbs"],
-      ["Face Pulls", "3 x 15", "60 sec", "30 lbs"]
+      ["Pull-Ups<br>or Assisted Pull-Ups", "4 x 6-8", "2 min", "BW"],
+      ["Lat Pulldown<br>wide or neutral", "3 x 8-12", "90 sec", "100 lbs"],
+      ["Chest-Supported Row<br>or Machine Row", "4 x 8-10", "90 sec", "100-120"],
+      ["Seated Cable Row", "3 x 10-12", "75-90 sec", "110-120 lbs"],
+      ["Straight-Arm Pulldown", "3 x 12-15", "60 sec", "40 lbs"],
+      ["Face Pulls<br>or Reverse Flyes", "3 x 15-20", "60 sec", "30 lbs"],
+      ["EZ-Bar Curl", "3 x 10-12", "60 sec", "55-60 lbs"],
+      ["Incline DB Curl<br>or Hammer Curl", "2-3 x 10-12", "60 sec", "20-25 lbs ea"]
     ]
   },
   {
     name: "Tuesday",
     short: "Tue",
     dow: 2,
-    tag: "Push B",
-    tagClass: "tag-push",
-    focus: "Hypertrophy",
+    tag: "Legs A",
+    tagClass: "tag-power",
+    focus: "Quad Focus",
     intent: "Main quad-building day",
     exercises: [
       ["Hack Squat", "4 x 8-12", "2.5 min", "90-115 lbs"],
-      ["Dumbbell Bench Press", "4 x 8-12", "90 sec", "40 lbs ea"],
-      ["Pec Deck<br>or Butterfly Machine", "3 x 12-15", "60-75 sec", "Controlled"],
-      ["Seated Dumbbell OHP", "3 x 8-12", "90 sec", "30 lbs ea"],
+      ["Back Squat to Parallel<br>or Safety Bar Squat", "3 x 5-6", "2.5-3 min", "115-135 lbs"],
+      ["Leg Press", "3 x 10-15", "90 sec", "180 lbs"],
       ["Single-Leg Leg Press", "3 x 10-12/leg", "90 sec", "90 lbs"],
       ["Leg Extension<br>pain-free range", "2-3 x 12-15", "60 sec", "Light-med"],
-      ["Lateral Raises (dumbbell)", "2-3 x 12-15", "60 sec", "15 lbs ea"],
-      ["Overhead Tricep Extension (cable)", "3 x 12", "60 sec", "40 lbs"]
+      ["Standing or Seated Calf Raise", "4 x 10-15", "60 sec", "135 lbs"],
+      ["Optional Easy Bike<br>or Incline Walk", "8-12 min", "Easy", "No intervals"]
     ]
   },
   {
     name: "Wednesday",
     short: "Wed",
     dow: 3,
-    tag: "Pull B",
-    tagClass: "tag-pull",
-    focus: "Hypertrophy",
-    intent: "Back, hamstrings, glutes",
+    tag: "Reset",
+    tagClass: "tag-rest",
+    focus: "Zone 2 + Core",
+    intent: "Recovery, core, mobility, fat-loss support",
+    recovery: true,
     exercises: [
-      ["Romanian Deadlift", "3 x 8-10", "2.5 min", "115 lbs"],
-      ["Lat Pulldown (wide grip)", "4 x 10", "90 sec", "100 lbs"],
-      ["Hip Thrust (barbell)", "3-4 x 8-12", "90 sec", "135 lbs"],
-      ["Chest-Supported Row (dumbbell)", "4 x 10", "90 sec", "35 lbs ea"],
-      ["Single-Arm Cable Row", "3 x 12", "60 sec", "40 lbs"],
-      ["Seated Leg Curl", "3 x 12-15", "60 sec", "45 lbs"],
-      ["Incline Dumbbell Curl", "3 x 10", "60 sec", "20 lbs ea"],
-      ["Reverse Flyes (cable)", "3 x 15-20", "60 sec", "15 lbs ea"]
+      ["Zone 2 Cardio", "25-35 min", "Easy", "Row/bike/walk"],
+      ["Dead Bug", "2-3 x 8/side", "30 sec", "BW"],
+      ["Pallof Press", "2-3 x 10/side", "45 sec", "Light"],
+      ["Side Plank", "2 x 20-40 sec/side", "45 sec", "BW"],
+      ["Cable Crunch<br>or Hanging Knee Raise", "2-3 x 10-15", "60 sec", "Controlled"],
+      ["Mobility", "8-12 min", "Easy", "Hips/back"]
     ]
   },
   {
     name: "Thursday",
     short: "Thu",
     dow: 4,
-    tag: "Push C",
-    tagClass: "tag-push",
-    focus: "Power",
-    intent: "Speed, triceps, knee-safe legs",
+    tag: "Legs B",
+    tagClass: "tag-power",
+    focus: "Hamstrings + Glutes",
+    intent: "Posterior chain with controlled fatigue",
     exercises: [
-      ["Paused Back Squat<br>or Safety Bar Squat", "3 x 6-8", "2.5 min", "115 lbs"],
-      ["Close-Grip Bench Press", "3 x 6-8", "2.5 min", "95 lbs"],
-      ["Arnold Press", "3 x 10-12", "90 sec", "25 lbs ea"],
-      ["Box Step-Ups (dumbbell)", "3 x 8-10/leg", "90 sec", "25 lbs ea"],
-      ["Skull Crushers", "3 x 10-12", "60 sec", "40 lbs"],
-      ["Standing Calf Raises", "3 x 12-15", "60 sec", "135 lbs"]
+      ["Romanian Deadlift", "3 x 8-10", "2.5 min", "115 lbs"],
+      ["Barbell Hip Thrust", "4 x 8-12", "90 sec", "135 lbs"],
+      ["Seated or Lying Leg Curl", "3 x 10-15", "75 sec", "45 lbs"],
+      ["Single-Leg RDL (dumbbell)", "2-3 x 8-10/leg", "90 sec", "25-30 lbs ea"],
+      ["45-Degree Back Extension<br>glute-biased", "3 x 10-12", "75 sec", "BW or 25 lbs"],
+      ["Cable Hip Abduction<br>or Glute Med Work", "2-3 x 12-15/side", "60 sec", "Light-med"],
+      ["Calf Raise", "3 x 12-15", "60 sec", "Moderate"]
     ]
   },
   {
     name: "Friday",
     short: "Fri",
     dow: 5,
-    tag: "Pull C",
-    tagClass: "tag-pull",
-    focus: "Power + Metabolic",
-    intent: "Posterior chain plus Grit Runner",
+    tag: "Upper",
+    tagClass: "tag-push",
+    focus: "Pump + Arms",
+    intent: "Shoulders, arms, weak points, optional cardio",
     exercises: [
-      ["Trap Bar Deadlift<br>or Rack Pull", "3 x 5-6", "3 min", "175 lbs"],
-      ["Chin-Ups (weighted)", "4 x 6", "2.5 min", "BW"],
-      ["Meadows Row", "3 x 8", "90 sec", "35 lbs"],
-      ["Straight-Arm Pulldown", "3 x 12", "60 sec", "40 lbs"],
-      ["Single-Leg RDL (dumbbell)", "3 x 8-10/leg", "90 sec", "25-30 lbs ea"],
-      ["Hammer Curl", "3 x 10", "60 sec", "25 lbs ea"],
-      ["Band Pull-Aparts", "3 x 20", "45 sec", "Light band"],
-      ["Grit Runner Finisher", "6-8 rounds", "70-100 sec easy", "20 sec hard"]
+      ["Close-Grip Bench Press<br>or Machine Chest Press", "3 x 8-10", "90 sec", "95 lbs"],
+      ["Landmine Press<br>or Arnold Press", "3 x 10-12", "90 sec", "25 lbs ea"],
+      ["Cable Row<br>or Chest-Supported T-Bar Row", "3 x 10-12", "75 sec", "Moderate"],
+      ["Lateral Raises", "3 x 12-20", "60 sec", "15 lbs ea"],
+      ["Rear Delt Flyes", "3 x 15-20", "60 sec", "15 lbs ea"],
+      ["Rope Pushdown<br>+ Cable Curl Superset", "3 x 12 each", "60 sec", "Controlled"],
+      ["Hammer Curl", "2-3 x 10-12", "60 sec", "25 lbs ea"],
+      ["Cable Crunch<br>or Hanging Knee Raise", "2-3 x 10-15", "60 sec", "Controlled"],
+      ["Optional Zone 2", "10-20 min", "Easy", "If fresh"]
     ]
   },
   {
@@ -661,7 +667,7 @@ function getToday() {
   return new Date().getDay();
 }
 
-const blockStartDate = new Date("2026-07-01T00:00:00");
+const blockStartDate = new Date("2026-07-05T00:00:00");
 
 function getTrainingBlockStatus() {
   const now = new Date();
@@ -672,8 +678,8 @@ function getTrainingBlockStatus() {
   if (elapsedDays < 0) {
     return {
       check: false,
-      title: "Reset starts tomorrow",
-      text: "Use today as a bridge/recovery day. Block Week 1 begins on Wednesday."
+      title: "V2 starts Sunday",
+      text: "Use today as a bridge session if needed. The first clean V2 block begins on Sunday."
     };
   }
 
@@ -684,7 +690,7 @@ function getTrainingBlockStatus() {
     return {
       check: true,
       title: "Week 5 deload check",
-      text: "Deload if performance is down, joints feel cranky, or recovery is poor. If you feel strong, keep weights steady and avoid extra volume."
+      text: "Deload if performance is down, joints feel cranky, or recovery is poor. If you feel strong, keep weights steady and skip extra volume."
     };
   }
 
@@ -698,7 +704,7 @@ function getTrainingBlockStatus() {
 function renderToday(today) {
   const day = days.find(item => item.dow === today);
   const panel = document.getElementById("todayPanel");
-  const liftCount = days.filter(item => !item.rest).length;
+  const liftCount = days.filter(item => !item.rest && !item.recovery).length;
   const block = getTrainingBlockStatus();
   panel.innerHTML = `
     <div class="today-kicker">Today</div>
@@ -709,8 +715,8 @@ function renderToday(today) {
     <div class="today-focus">${day.intent}</div>
     <div class="stats">
       <div class="stat"><strong>${liftCount}</strong><span>lifting days</span></div>
-      <div class="stat"><strong>3x</strong><span>quad touches</span></div>
-      <div class="stat"><strong>3x</strong><span>posterior chain</span></div>
+      <div class="stat"><strong>2x</strong><span>hard leg days</span></div>
+      <div class="stat"><strong>2-4x</strong><span>Zone 2</span></div>
     </div>
     <div class="deload-alert ${block.check ? "check" : ""}">
       <strong>${block.title}</strong>
