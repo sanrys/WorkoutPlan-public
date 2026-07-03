@@ -639,8 +639,8 @@ const days = [
     focus: "Pump + Arms",
     intent: "Shoulders, arms, weak points, optional cardio",
     exercises: [
-      ["Close-Grip Bench Press<br>or Machine Chest Press", "3 x 8-10", "90 sec", "95 lbs"],
-      ["Landmine Press<br>or Arnold Press", "3 x 10-12", "90 sec", "25 lbs ea"],
+      ["Machine Chest Press<br>or Cable Fly", "2-3 x 10-15", "75 sec", "Moderate"],
+      ["Landmine Press<br>or Cable Y-Raise", "3 x 10-12", "90 sec", "Light-med"],
       ["Cable Row<br>or Chest-Supported T-Bar Row", "3 x 10-12", "75 sec", "Moderate"],
       ["Lateral Raises", "3 x 12-20", "60 sec", "15 lbs ea"],
       ["Rear Delt Flyes", "3 x 15-20", "60 sec", "15 lbs ea"],
@@ -668,6 +668,43 @@ function getToday() {
 }
 
 const blockStartDate = new Date("2026-07-05T00:00:00");
+
+const transitionDays = {
+  "2026-07-03": {
+    name: "Friday",
+    short: "Now",
+    dow: 5,
+    tag: "Transition",
+    tagClass: "tag-rest",
+    focus: "Bridge / Recovery",
+    intent: "Avoid repeating old Thursday Push C. V2 starts cleanly on Sunday.",
+    transition: true,
+    exercises: [
+      ["Zone 2 Cardio", "20-30 min", "Easy", "Bike/walk/row"],
+      ["Cable Row<br>or Machine Row", "2-3 x 12", "60 sec", "Light-med"],
+      ["Rear Delt Flyes", "2-3 x 15-20", "45-60 sec", "Light"],
+      ["Rope Pushdown<br>+ Cable Curl", "2 x 12 each", "60 sec", "Easy"],
+      ["Dead Bug<br>+ Pallof Press", "2 rounds", "Easy", "Activation"],
+      ["Mobility", "8-10 min", "Easy", "Hips/back"]
+    ]
+  },
+  "2026-07-04": {
+    name: "Saturday",
+    short: "Now",
+    dow: 6,
+    tag: "Transition",
+    tagClass: "tag-rest",
+    focus: "Rest / Zone 2",
+    intent: "Recover so V2 starts cleanly on Sunday.",
+    transition: true,
+    exercises: [
+      ["Walk", "20-40 min", "Easy", "Optional"],
+      ["Zone 2 Cardio", "25-35 min", "Easy", "Optional"],
+      ["Mobility", "10-15 min", "Easy", "Hips/back"],
+      ["Core Activation", "5-8 min", "Easy", "Optional"]
+    ]
+  }
+};
 
 function getTrainingBlockStatus() {
   const now = new Date();
@@ -701,8 +738,19 @@ function getTrainingBlockStatus() {
   };
 }
 
+function getDateKey(date = new Date()) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
+function getTransitionDay() {
+  return transitionDays[getDateKey()];
+}
+
 function renderToday(today) {
-  const day = days.find(item => item.dow === today);
+  const day = getTransitionDay() || days.find(item => item.dow === today);
   const panel = document.getElementById("todayPanel");
   const liftCount = days.filter(item => !item.rest && !item.recovery).length;
   const block = getTrainingBlockStatus();
@@ -727,8 +775,10 @@ function renderToday(today) {
 
 function renderRail(today) {
   const rail = document.getElementById("dayRail");
-  rail.innerHTML = days.map(day => `
-    <a class="day-link ${day.dow === today ? "today" : ""}" href="#day-${day.dow}">
+  const transitionDay = getTransitionDay();
+  const transitionLink = transitionDay ? '<a class="day-link today" href="#day-transition">Now</a>' : "";
+  rail.innerHTML = transitionLink + days.map(day => `
+    <a class="day-link ${!transitionDay && day.dow === today ? "today" : ""}" href="#day-${day.dow}">
       ${day.short}
     </a>
   `).join("");
@@ -755,9 +805,32 @@ function exerciseMarkup(exercise, index) {
 function renderDays() {
   const container = document.getElementById("days");
   const today = getToday();
+  const transitionDay = getTransitionDay();
+  const transitionHTML = transitionDay ? `
+    <article class="day-card today open" id="day-transition">
+      <button class="day-header" type="button" aria-expanded="true">
+        <div>
+          <div class="day-name-line">
+            <span class="day-name">${transitionDay.name}</span>
+            <span class="today-badge">Today</span>
+          </div>
+          <div class="day-meta">${transitionDay.intent}</div>
+        </div>
+        <div class="tag-wrap">
+          <span class="day-tag ${transitionDay.tagClass}">${transitionDay.tag}</span>
+          <span class="chevron" aria-hidden="true">v</span>
+        </div>
+      </button>
+      <div class="day-body">
+        <div class="exercise-list">
+          ${transitionDay.exercises.map(exerciseMarkup).join("")}
+        </div>
+      </div>
+    </article>
+  ` : "";
 
-  container.innerHTML = days.map(day => {
-    const isToday = day.dow === today;
+  container.innerHTML = transitionHTML + days.map(day => {
+    const isToday = !transitionDay && day.dow === today;
     let bodyHTML = "";
 
     if (day.rest) {
