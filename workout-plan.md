@@ -38,6 +38,8 @@ Key changes:
 
 > **Missed-day reset rule:** If the week drifts because sessions were skipped or shifted, do not try to make up every missed day. Use the next sensible bridge session based on fatigue and reset back to the normal weekly schedule on Wednesday.
 
+> **V2 rollout rule:** The first clean V2 block starts Sunday, 2026-07-05. If coming directly from the old V1 Thursday Push C session, do not do the normal V2 Friday upper pump the next day. Use a transition day instead: easy Zone 2, rear delts, light rows, arms, core, and mobility. No close-grip bench, Arnold press, skull crushers, hard squats, or deadlifts.
+
 ---
 
 ## Sunday - Chest + Shoulders + Triceps
@@ -125,8 +127,8 @@ Key changes:
 
 | # | Exercise | Sets x Reps | Rest | Suggested Weight |
 |---|----------|-------------|------|-----------------|
-| 1 | Close-Grip Bench Press / Machine Chest Press | 3 x 8-10 | 90 sec | 95 lbs or moderate |
-| 2 | Landmine Press / Arnold Press | 3 x 10-12 | 90 sec | 25 lbs each |
+| 1 | Machine Chest Press / Cable Fly | 2-3 x 10-15 | 75 sec | Moderate pump |
+| 2 | Landmine Press / Cable Y-Raise | 3 x 10-12 | 90 sec | Light-moderate |
 | 3 | Cable Row / Chest-Supported T-Bar Row | 3 x 10-12 | 75 sec | Moderate |
 | 4 | Lateral Raises | 3 x 12-20 | 60 sec | 15 lbs each |
 | 5 | Rear Delt Flyes | 3 x 15-20 | 60 sec | 15 lbs each |
