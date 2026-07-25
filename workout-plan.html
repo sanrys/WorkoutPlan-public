@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Workout Plan V2</title>
+<title>Workout Plan V3</title>
 <style>
   :root {
     --bg: #0f1115;
@@ -485,10 +485,10 @@
 <main class="app">
   <header class="topbar">
     <div>
-      <h1>Workout Plan V2</h1>
-      <p class="subtitle">V2 hybrid split for leg growth, upper-body progress, cardio, and recovery.</p>
+      <h1>Workout Plan V3</h1>
+      <p class="subtitle">Alternating hybrid split for leg growth, upper-body progress, cardio, and recovery.</p>
     </div>
-    <div class="gym-pill">V2 Hybrid</div>
+    <div class="gym-pill">V3 Hybrid</div>
   </header>
 
   <section class="today-panel" id="todayPanel" aria-live="polite"></section>
@@ -499,7 +499,7 @@
     <h2>Missed-Day Reset</h2>
     <div class="info-grid">
       <div class="rule"><strong>Bridge</strong><span>When days are skipped or shifted, use the next sensible session based on fatigue.</span></div>
-      <div class="rule"><strong>Protect legs</strong><span>Keep Tuesday as quad day and Thursday as posterior-chain day. Do not stack hard leg days.</span></div>
+      <div class="rule"><strong>Protect legs</strong><span>Keep Monday as quad day and Thursday as posterior-chain day, with 72 hours between hard leg sessions.</span></div>
       <div class="rule"><strong>Wednesday</strong><span>Use Wednesday as the reset anchor: Zone 2, core, mobility, then resume the normal schedule.</span></div>
     </div>
   </section>
@@ -513,7 +513,7 @@
       <div class="rule"><strong>Isolation</strong><span>Add reps first, then small weight increases once the top of the range is owned.</span></div>
       <div class="rule"><strong>Legs</strong><span>Prioritize controlled reps, knee comfort, and recovery over chasing load every week.</span></div>
     </div>
-    <p class="quiet-note">V2 block starts 2026-07-05. Week 5 is a deload check: reduce sets 30-40% only if performance, joints, sleep, or motivation are trending down.</p>
+    <p class="quiet-note">V3 block starts 2026-07-26. Week 5 is a deload check: reduce sets 30-40% only if performance, joints, sleep, or motivation are trending down.</p>
   </section>
 
   <section class="info-section">
@@ -561,6 +561,24 @@ const days = [
     name: "Monday",
     short: "Mon",
     dow: 1,
+    tag: "Legs A",
+    tagClass: "tag-power",
+    focus: "Quad Focus",
+    intent: "Main quad-building day",
+    exercises: [
+      ["Hack Squat", "4 x 8-12", "2.5 min", "90-115 lbs"],
+      ["Back Squat to Parallel<br>or Safety Bar Squat", "3 x 5-6", "2.5-3 min", "115-135 lbs"],
+      ["Leg Press", "3 x 10-15", "90 sec", "180 lbs"],
+      ["Single-Leg Leg Press", "3 x 10-12/leg", "90 sec", "90 lbs"],
+      ["Leg Extension<br>pain-free range", "2-3 x 12-15", "60 sec", "Light-med"],
+      ["Standing or Seated Calf Raise", "4 x 10-15", "60 sec", "135 lbs"],
+      ["Optional Easy Bike<br>or Incline Walk", "8-12 min", "Easy", "No intervals"]
+    ]
+  },
+  {
+    name: "Tuesday",
+    short: "Tue",
+    dow: 2,
     tag: "Pull",
     tagClass: "tag-pull",
     focus: "Back + Biceps",
@@ -574,24 +592,6 @@ const days = [
       ["Face Pulls<br>or Reverse Flyes", "3 x 15-20", "60 sec", "30 lbs"],
       ["EZ-Bar Curl", "3 x 10-12", "60 sec", "55-60 lbs"],
       ["Incline DB Curl<br>or Hammer Curl", "2-3 x 10-12", "60 sec", "20-25 lbs ea"]
-    ]
-  },
-  {
-    name: "Tuesday",
-    short: "Tue",
-    dow: 2,
-    tag: "Legs A",
-    tagClass: "tag-power",
-    focus: "Quad Focus",
-    intent: "Main quad-building day",
-    exercises: [
-      ["Hack Squat", "4 x 8-12", "2.5 min", "90-115 lbs"],
-      ["Back Squat to Parallel<br>or Safety Bar Squat", "3 x 5-6", "2.5-3 min", "115-135 lbs"],
-      ["Leg Press", "3 x 10-15", "90 sec", "180 lbs"],
-      ["Single-Leg Leg Press", "3 x 10-12/leg", "90 sec", "90 lbs"],
-      ["Leg Extension<br>pain-free range", "2-3 x 12-15", "60 sec", "Light-med"],
-      ["Standing or Seated Calf Raise", "4 x 10-15", "60 sec", "135 lbs"],
-      ["Optional Easy Bike<br>or Incline Walk", "8-12 min", "Easy", "No intervals"]
     ]
   },
   {
@@ -667,44 +667,9 @@ function getToday() {
   return new Date().getDay();
 }
 
-const blockStartDate = new Date("2026-07-05T00:00:00");
+const blockStartDate = new Date("2026-07-26T00:00:00");
 
-const transitionDays = {
-  "2026-07-03": {
-    name: "Friday",
-    short: "Now",
-    dow: 5,
-    tag: "Transition",
-    tagClass: "tag-rest",
-    focus: "Bridge / Recovery",
-    intent: "Avoid repeating old Thursday Push C. V2 starts cleanly on Sunday.",
-    transition: true,
-    exercises: [
-      ["Zone 2 Cardio", "20-30 min", "Easy", "Bike/walk/row"],
-      ["Cable Row<br>or Machine Row", "2-3 x 12", "60 sec", "Light-med"],
-      ["Rear Delt Flyes", "2-3 x 15-20", "45-60 sec", "Light"],
-      ["Rope Pushdown<br>+ Cable Curl", "2 x 12 each", "60 sec", "Easy"],
-      ["Dead Bug<br>+ Pallof Press", "2 rounds", "Easy", "Activation"],
-      ["Mobility", "8-10 min", "Easy", "Hips/back"]
-    ]
-  },
-  "2026-07-04": {
-    name: "Saturday",
-    short: "Now",
-    dow: 6,
-    tag: "Transition",
-    tagClass: "tag-rest",
-    focus: "Rest / Zone 2",
-    intent: "Recover so V2 starts cleanly on Sunday.",
-    transition: true,
-    exercises: [
-      ["Walk", "20-40 min", "Easy", "Optional"],
-      ["Zone 2 Cardio", "25-35 min", "Easy", "Optional"],
-      ["Mobility", "10-15 min", "Easy", "Hips/back"],
-      ["Core Activation", "5-8 min", "Easy", "Optional"]
-    ]
-  }
-};
+const transitionDays = {};
 
 function getTrainingBlockStatus() {
   const now = new Date();
@@ -715,8 +680,8 @@ function getTrainingBlockStatus() {
   if (elapsedDays < 0) {
     return {
       check: false,
-      title: "V2 starts Sunday",
-      text: "Use today as a bridge session if needed. The first clean V2 block begins on Sunday."
+      title: "V3 starts Sunday",
+      text: "Use today for recovery. The first V3 training block begins on Sunday."
     };
   }
 
