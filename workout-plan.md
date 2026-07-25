@@ -1,18 +1,18 @@
-# Workout Plan V2 - Hybrid Body-Part Emphasis
+# Workout Plan V3 - Alternating Hybrid Split
 
 **Level:** Advanced | **Equipment:** Full Gym (Equinox) | **Primary Rest Day:** Saturday
 **Goals:** Muscle Building + Stronger Legs + Fat Loss + Sustainable Recovery
 
 ---
 
-## Why V2
+## Why V3
 
-V2 moves away from strict push/pull and into a hybrid body-part emphasis split. The goal is to keep what worked from the push/pull plan while giving legs a clearer growth signal and more recovery.
+V3 keeps the hybrid body-part emphasis of V2 while spreading upper- and lower-body sessions more evenly. Moving quad day to Monday and pull day to Tuesday gives the two hard leg sessions about 72 hours apart without reducing upper-body frequency.
 
 Key changes:
 
 - Legs are no longer hit hard almost every day.
-- Tuesday is the main quad-building day.
+- Monday is the main quad-building day.
 - Thursday is the hamstring/glute/posterior-chain day.
 - Deadlift/rack-pull fatigue is controlled instead of being a weekly default.
 - Cardio and core are built around the lifting instead of competing with it.
@@ -25,20 +25,20 @@ Key changes:
 | Day | Split | Focus |
 |-----|-------|-------|
 | **Sunday** | Chest + Shoulders + Triceps | Upper push strength and hypertrophy |
-| **Monday** | Back + Biceps | Upper pull without heavy leg fatigue |
-| **Tuesday** | Legs A | Main quad-building day |
+| **Monday** | Legs A | Main quad-building day |
+| **Tuesday** | Back + Biceps | Upper pull without heavy leg fatigue |
 | **Wednesday** | Zone 2 + Core + Mobility | Recovery, reset, visceral-fat support |
 | **Thursday** | Legs B | Hamstrings, glutes, posterior chain |
 | **Friday** | Upper Pump + Arms + Weak Points | Shoulders, arms, upper volume, optional conditioning |
 | **Saturday** | **REST** | Recovery, walking, optional easy Zone 2 |
 
-> **Leg growth rule:** Hard lower-body training happens twice per week: Tuesday for quads and Thursday for hamstrings/glutes. This should create a stronger growth signal than touching legs lightly or heavily on almost every day.
+> **Leg growth rule:** Hard lower-body training happens twice per week: Monday for quads and Thursday for hamstrings/glutes. The extra recovery time should create a stronger growth signal than touching legs lightly or heavily on almost every day.
 
 > **Knee considerations (right knee, lateral):** Stop squats around parallel. Do not chase deep squat range if the knee is irritated. Prioritize hack squat, leg press, single-leg leg press, box step-ups, and controlled single-leg RDLs. If discomfort appears, shorten range of motion or use light leg extension in a pain-free range.
 
 > **Missed-day reset rule:** If the week drifts because sessions were skipped or shifted, do not try to make up every missed day. Use the next sensible bridge session based on fatigue and reset back to the normal weekly schedule on Wednesday.
 
-> **V2 rollout rule:** The first clean V2 block starts Sunday, 2026-07-05. If coming directly from the old V1 Thursday Push C session, do not do the normal V2 Friday upper pump the next day. Use a transition day instead: easy Zone 2, rear delts, light rows, arms, core, and mobility. No close-grip bench, Arnold press, skull crushers, hard squats, or deadlifts.
+> **V3 rollout rule:** The first V3 block starts Sunday, 2026-07-26. Sunday remains the push day; the reordered schedule begins with quad-focused Legs A on Monday and Back + Biceps on Tuesday.
 
 ---
 
@@ -58,24 +58,7 @@ Key changes:
 
 ---
 
-## Monday - Back + Biceps
-
-| # | Exercise | Sets x Reps | Rest | Suggested Weight |
-|---|----------|-------------|------|-----------------|
-| 1 | Pull-Ups / Assisted Pull-Ups | 4 x 6-8 | 2 min | Bodyweight |
-| 2 | Lat Pulldown (wide or neutral) | 3 x 8-12 | 90 sec | 100 lbs |
-| 3 | Chest-Supported Row / Machine Row | 4 x 8-10 | 90 sec | 100-120 lbs or 40 lbs each |
-| 4 | Seated Cable Row | 3 x 10-12 | 75-90 sec | 110-120 lbs |
-| 5 | Straight-Arm Pulldown | 3 x 12-15 | 60 sec | 40 lbs |
-| 6 | Face Pulls / Reverse Flyes | 3 x 15-20 | 60 sec | 30 lbs or 15 lbs each |
-| 7 | EZ-Bar Curl | 3 x 10-12 | 60 sec | 55-60 lbs |
-| 8 | Incline DB Curl / Hammer Curl | 2-3 x 10-12 | 60 sec | 20-25 lbs each |
-
-**Intent:** Build the back without adding deadlift fatigue before Tuesday legs.
-
----
-
-## Tuesday - Legs A: Quad Focus
+## Monday - Legs A: Quad Focus
 
 | # | Exercise | Sets x Reps | Rest | Suggested Weight |
 |---|----------|-------------|------|-----------------|
@@ -89,6 +72,23 @@ Key changes:
 **Rules:** Stop squat depth around parallel. If the knee talks back, reduce squat volume first and keep hack squat/leg press controlled.
 
 **Cardio:** Skip hard intervals. If desired, do 8-12 min very easy bike or incline walk only.
+
+---
+
+## Tuesday - Back + Biceps
+
+| # | Exercise | Sets x Reps | Rest | Suggested Weight |
+|---|----------|-------------|------|-----------------|
+| 1 | Pull-Ups / Assisted Pull-Ups | 4 x 6-8 | 2 min | Bodyweight |
+| 2 | Lat Pulldown (wide or neutral) | 3 x 8-12 | 90 sec | 100 lbs |
+| 3 | Chest-Supported Row / Machine Row | 4 x 8-10 | 90 sec | 100-120 lbs or 40 lbs each |
+| 4 | Seated Cable Row | 3 x 10-12 | 75-90 sec | 110-120 lbs |
+| 5 | Straight-Arm Pulldown | 3 x 12-15 | 60 sec | 40 lbs |
+| 6 | Face Pulls / Reverse Flyes | 3 x 15-20 | 60 sec | 30 lbs or 15 lbs each |
+| 7 | EZ-Bar Curl | 3 x 10-12 | 60 sec | 55-60 lbs |
+| 8 | Incline DB Curl / Hammer Curl | 2-3 x 10-12 | 60 sec | 20-25 lbs each |
+
+**Intent:** Build the back without adding posterior-chain fatigue between the two leg sessions.
 
 ---
 
@@ -160,7 +160,7 @@ Use **double progression**: hit the top of the rep range with good form across a
 | Isolation work | 12-20 reps | Add reps first, then small weight increases |
 | Legs | 8-15 reps mostly | Prioritize controlled reps, ROM tolerance, and recovery |
 
-**Deload schedule:** V2 training block starts **2026-07-05**. Weeks 1-4 are normal training. Week 5 is a deload check week: deload if performance is down for 2+ sessions, joints feel cranky, sleep/recovery is poor, motivation is unusually low, or warm-up weights feel heavier than normal.
+**Deload schedule:** V3 training block starts **2026-07-26**. Weeks 1-4 are normal training. Week 5 is a deload check week: deload if performance is down for 2+ sessions, joints feel cranky, sleep/recovery is poor, motivation is unusually low, or warm-up weights feel heavier than normal.
 
 **Deload method:** Deload does not mean starting over. Reduce sets by about 30-40%, keep technique crisp, and use slightly easier loads only if joints or bar speed ask for it. If you feel good in Week 5, keep normal weights but stop 2-3 reps shy of failure and avoid extra volume.
 
@@ -194,13 +194,15 @@ Core work will strengthen and shape the midsection, but belly fat reduction stil
 ## Version Switching
 
 The old push/pull plan is stored as `plan-versions/v1/`.
-This hybrid plan is stored as `plan-versions/v2/`.
+The original hybrid plan with Tuesday/Thursday leg days is stored as `plan-versions/v2/`.
+This alternating hybrid plan is stored as `plan-versions/v3/`.
 
 To switch the live files later:
 
 ```bash
 scripts/switch-plan.sh v1
 scripts/switch-plan.sh v2
+scripts/switch-plan.sh v3
 ```
 
 After switching, review the files, commit, push `github main`, and publish the public files through the GitHub API.
