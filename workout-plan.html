@@ -320,6 +320,44 @@
     border-top: 1px solid var(--line);
   }
 
+  .video-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    border-top: 1px solid var(--line);
+    padding-top: 12px;
+    margin-top: 4px;
+  }
+
+  .video-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 58px;
+    border: 1px solid rgba(255, 138, 101, 0.38);
+    border-radius: 8px;
+    padding: 9px 10px;
+    color: var(--text);
+    background: rgba(255, 138, 101, 0.09);
+    text-decoration: none;
+    line-height: 1.2;
+  }
+
+  .video-link:active {
+    background: rgba(255, 138, 101, 0.18);
+  }
+
+  .video-link strong {
+    font-size: 0.82rem;
+  }
+
+  .video-link span {
+    color: var(--power);
+    font-size: 0.7rem;
+    font-weight: 750;
+    margin-top: 4px;
+  }
+
   .exercise-row {
     display: grid;
     grid-template-columns: 28px minmax(0, 1fr);
@@ -537,6 +575,19 @@
 </main>
 
 <script>
+const legDayVideos = [
+  {
+    label: "Warm-up video",
+    duration: "8 min",
+    url: "https://www.youtube.com/watch?v=DgjiFOKWsfg"
+  },
+  {
+    label: "Post-workout stretch",
+    duration: "7 min",
+    url: "https://www.youtube.com/watch?v=zOGCrQRpNMY"
+  }
+];
+
 const days = [
   {
     name: "Sunday",
@@ -565,6 +616,7 @@ const days = [
     tagClass: "tag-power",
     focus: "Quad Focus",
     intent: "Main quad-building day",
+    videos: legDayVideos,
     exercises: [
       ["Hack Squat", "4 x 8-12", "2.5 min", "90-115 lbs"],
       ["Back Squat to Parallel<br>or Safety Bar Squat", "3 x 5-6", "2.5-3 min", "115-135 lbs"],
@@ -620,6 +672,7 @@ const days = [
     tagClass: "tag-power",
     focus: "Hamstrings + Glutes",
     intent: "Posterior chain with controlled fatigue",
+    videos: legDayVideos,
     exercises: [
       ["Romanian Deadlift", "3 x 8-10", "2.5 min", "115 lbs"],
       ["Barbell Hip Thrust", "4 x 8-12", "90 sec", "135 lbs"],
@@ -767,6 +820,21 @@ function exerciseMarkup(exercise, index) {
   `;
 }
 
+function videoLinksMarkup(videos = []) {
+  if (!videos.length) return "";
+
+  return `
+    <div class="video-links" aria-label="Leg day videos">
+      ${videos.map(video => `
+        <a class="video-link" href="${video.url}" target="_blank" rel="noopener noreferrer">
+          <strong>${video.label}</strong>
+          <span>${video.duration} | YouTube</span>
+        </a>
+      `).join("")}
+    </div>
+  `;
+}
+
 function renderDays() {
   const container = document.getElementById("days");
   const today = getToday();
@@ -790,6 +858,7 @@ function renderDays() {
         <div class="exercise-list">
           ${transitionDay.exercises.map(exerciseMarkup).join("")}
         </div>
+        ${videoLinksMarkup(transitionDay.videos)}
       </div>
     </article>
   ` : "";
@@ -815,6 +884,7 @@ function renderDays() {
         <div class="exercise-list">
           ${day.exercises.map(exerciseMarkup).join("")}
         </div>
+        ${videoLinksMarkup(day.videos)}
       `;
     }
 
