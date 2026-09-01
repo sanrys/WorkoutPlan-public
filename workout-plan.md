@@ -60,6 +60,8 @@ Key changes:
 
 ## Monday - Legs A: Quad Focus
 
+**YouTube videos:** [8-minute pre-workout warm-up](https://www.youtube.com/watch?v=DgjiFOKWsfg) | [7-minute post-workout stretch](https://www.youtube.com/watch?v=zOGCrQRpNMY)
+
 | # | Exercise | Sets x Reps | Rest | Suggested Weight |
 |---|----------|-------------|------|-----------------|
 | 1 | Hack Squat | 4 x 8-12 | 2.5 min | 90-115 lbs |
@@ -108,6 +110,8 @@ Key changes:
 ---
 
 ## Thursday - Legs B: Hamstrings + Glutes
+
+**YouTube videos:** [8-minute pre-workout warm-up](https://www.youtube.com/watch?v=DgjiFOKWsfg) | [7-minute post-workout stretch](https://www.youtube.com/watch?v=zOGCrQRpNMY)
 
 | # | Exercise | Sets x Reps | Rest | Suggested Weight |
 |---|----------|-------------|------|-----------------|
